@@ -39,7 +39,7 @@ render(){
 }
 function mapStateToProps(state){
     return{
-        dept: state.DepartmentReducer.dept,
+        dept: state.DepartmentReducer.dept
     };
 }
 function mapDispatchToProps(dispatch){

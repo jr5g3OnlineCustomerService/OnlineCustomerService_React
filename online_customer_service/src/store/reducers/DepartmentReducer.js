@@ -1,6 +1,6 @@
 const initialState={
 
-    dept:[]
+    dept:undefined
 }
 export default function DepartmentReducer(state=initialState,action){
     switch(action.type){

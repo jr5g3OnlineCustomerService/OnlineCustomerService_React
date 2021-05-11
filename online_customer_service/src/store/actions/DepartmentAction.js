@@ -17,7 +17,7 @@ export const addDept1=(payload)=>{
     return(dispatch)=>{
         return axios.post(DepartmentURL+"/addDepartment",data)
         .then(Response =>{
-            localStorage.setItem("register",JSON.stringify(Response.data));
+           // localStorage.setItem("register",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(AddDepartmentSucess());
         })
