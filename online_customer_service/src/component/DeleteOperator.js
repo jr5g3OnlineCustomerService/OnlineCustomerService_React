@@ -10,7 +10,7 @@ class DeleteOperator extends Component{
    }
    render(){
        if(this.props.deloperator !== undefined){
-           this.props.history.push("/alldept");
+           this.props.history.push("/alloperator");
        }
        return(
            <div></div>
