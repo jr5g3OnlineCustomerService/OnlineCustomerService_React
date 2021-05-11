@@ -32,7 +32,7 @@ render()
                          <td>{dept.departmentID}</td>
                          <td>{dept.departmentName}</td>
                          <td><button className="btn btn-warning">Update</button></td>
-                         <td><button className="btn btn-danger">Delete</button></td>
+                         <td><Link to={`/dept/${dept.departmentID}`}><button className="btn btn-danger">Delete</button></Link></td>
                      </tr>
                     
                       )}

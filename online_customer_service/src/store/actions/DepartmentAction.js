@@ -46,3 +46,25 @@ export const getDepartments=()=>{
         })
     };
 };
+
+export const deleteItemSuccess=()=>{
+    console.log("inside deleteItemSuccess method");
+    return {
+        type : 'ITEM_DELETED'
+    }
+};
+
+export const deleteItem = (code) =>{
+    console.log("inside deleteItem method");
+    return (dispatch)=> {
+        return axios.delete(DepartmentURL+"/deleteDepartment/"+code)
+        .then(Response => {
+            console.log("api call");
+            dispatch(deleteItemSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};
