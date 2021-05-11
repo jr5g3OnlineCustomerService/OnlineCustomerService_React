@@ -28,3 +28,21 @@ export const addDept1=(payload)=>{
     };
 
 };
+export const getItemSuccess=(dept)=>{
+    console.log("inside get department success method");
+    //window.location.href="/getItem";
+    return{
+        type:'GET_ALL_ITEMS_SUCCESS',dept
+    }
+};
+export const getDepartments=()=>{
+    console.log("Inside getDepartments");
+    return(dispatch)=>{
+        return axios.get(DepartmentURL+"/allDepartments")
+        .then(Response=>{
+            localStorage.setItem("dept",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getItemSuccess(Response.data));
+        })
+    };
+};

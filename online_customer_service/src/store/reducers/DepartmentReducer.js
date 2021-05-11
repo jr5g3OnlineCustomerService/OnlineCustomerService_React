@@ -10,11 +10,11 @@ export default function DepartmentReducer(state=initialState,action){
                     dept:action.dept
                 };
                 
-       /* case 'GET_ALL_ITEMS_SUCCESS':
+        case 'GET_ALL_ITEMS_SUCCESS':
                 return{
                     ...state,
-                    dept:action.items
-                };*/
+                    dept:action.dept
+                };
         default:
             return state
 }
