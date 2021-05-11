@@ -1,7 +1,7 @@
 const initialState={
 
-    operator:[],
-    delitem:undefined
+    opt:[],
+    deloperator:undefined
 }
 export default function OperatorReducer(state=initialState,action){
     switch(action.type){
@@ -14,7 +14,7 @@ export default function OperatorReducer(state=initialState,action){
         case 'GET_ALL_OPERATORS_SUCCESS':
                 return{
                     ...state,
-                    operator:action.operator
+                    opt:action.opt
                 };
          case 'OPERATOR_DELETED':
                 return{

@@ -71,7 +71,7 @@ export const getOptSuccess=(opt)=>{
 export const getOperators=()=>{
     console.log("Inside getOperators");
     return(dispatch)=>{
-        return axios.get(OperatorURL+"/allOperators")
+        return axios.get("http://localhost:8889/admin/allOperators")
         .then(Response=>{
             localStorage.setItem("opt",JSON.stringify(Response.data));
             console.log("api call");

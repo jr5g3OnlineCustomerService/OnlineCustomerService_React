@@ -13,7 +13,7 @@ componentDidMount(){
 }
 render()
 {
-    let op=this.props.operator;
+    let op=this.props.opt;
     return(
         <div>
         <h1>OPERATOR</h1>
@@ -58,7 +58,7 @@ render()
 }
 function mapStateToProps(state){
     return{
-        operator:state.OperatorReducer.operator
+        opt:state.OperatorReducer.opt
     };
 }
 function mapDispatchToProps(dispatch){
