@@ -7,6 +7,7 @@ export const AddDepartmentSucess=()=>{
     return{
         type:'ADD_SUCCESS'
     }
+    
 };
 export const addDept1=(payload)=>{
     console.log("inside add department method");

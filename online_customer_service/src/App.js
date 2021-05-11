@@ -5,7 +5,6 @@ import OperatorRegisteration from './component/OperatorRegisteration';
 import AdminLogin from './component/AdminLogin';
 import AddDepartment from './component/AddDepartment';
 import './App.css';
-
 function App() {
   return (
     <div className="App">

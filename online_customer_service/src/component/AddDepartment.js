@@ -13,8 +13,7 @@ class AddDepartment extends Component{
     }
     addDept=(add)=>{
         let payload={
-            departmentName:this.state.departmentName
-            
+            departmentName:this.state.departmentName  
         }
         this.props.DepartmentAction.addDept1(payload);
     }

@@ -4,6 +4,5 @@ import DepartmentReducer from './DepartmentReducers'
 
 const RootReducer = combineReducers({
     LoginReducer,DepartmentReducer
-   
 });
 export default RootReducer;
