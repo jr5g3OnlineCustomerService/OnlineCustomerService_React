@@ -79,3 +79,24 @@ export const getOperators=()=>{
         })
     };
 };
+export const deleteOperatorSuccess=()=>{
+    console.log("inside deleteOperatorSuccess method");
+    return {
+        type : 'OPERATOR_DELETED'
+    }
+};
+
+export const deleteoperator = (code) =>{
+    console.log("inside delete operator method");
+    return (dispatch)=> {
+        return axios.delete(OperatorURL+"/deleteOperator/"+code)
+        .then(Response => {
+            console.log("api call");
+            dispatch(deleteOperatorSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};
