@@ -89,7 +89,7 @@ export const deleteOperatorSuccess=()=>{
 export const deleteoperator = (code) =>{
     console.log("inside delete operator method");
     return (dispatch)=> {
-        return axios.delete(OperatorURL+"/deleteOperator/"+code)
+        return axios.delete("http://localhost:8889/admin/deleteOperator/"+code)
         .then(Response => {
             console.log("api call");
             dispatch(deleteOperatorSuccess());
