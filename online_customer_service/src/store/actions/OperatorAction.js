@@ -1,5 +1,5 @@
 import axios from 'axios';
-const LOGINURL="http://localhost:8889/operator";
+const OperatorURL="http://localhost:8889/operator";
 
 export const loginSuccess=(login)=>{
     console.log("inside login success");
@@ -15,7 +15,7 @@ export const loginValidate=(payload) =>{
         password:payload.password
     }
     return(dispatch)=>{
-        return axios.post(LOGINURL+"/login",data)
+        return axios.post(OperatorURL+"/login",data)
         .then(Response =>{
             localStorage.setItem("login",JSON.stringify(Response.data));
             console.log("api call");
@@ -48,7 +48,7 @@ export const registerUser=(payload)=>{
         departmentID:payload.departmentID
     }
     return(dispatch)=>{
-        return axios.post(LOGINURL+"/addOperator",data)
+        return axios.post(OperatorURL+"/addOperator",data)
         .then(Response =>{
             //localStorage.setItem("register",JSON.stringify(Response.data));
             console.log("api call");
@@ -60,4 +60,22 @@ export const registerUser=(payload)=>{
         });
     };
 
+};
+export const getOptSuccess=(opt)=>{
+    console.log("inside get operator success method");
+    //window.location.href="/getItem";
+    return{
+        type:'GET_ALL_OPERATORS_SUCCESS',opt
+    }
+};
+export const getOperators=()=>{
+    console.log("Inside getOperators");
+    return(dispatch)=>{
+        return axios.get(OperatorURL+"/allOperators")
+        .then(Response=>{
+            localStorage.setItem("opt",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getOptSuccess(Response.data));
+        })
+    };
 };
