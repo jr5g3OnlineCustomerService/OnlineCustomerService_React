@@ -1,11 +1,11 @@
 import axios from 'axios';
 const CUSTLOGINURL="http://localhost:8889/customer";
 
-export const loginSuccess=(login)=>{
+export const loginSuccess=(custlogin)=>{
   console.log("inside login success");
-  console.log(login);
+  console.log(custlogin);
   return{
-        type:'CUSTOMER_LOGIN_SUCCESS',login
+        type:'CUSTOMER_LOGIN_SUCCESS',custlogin
 }
 };
 export const loginValidate=(payload) =>{
@@ -17,7 +17,7 @@ let data={
 return(dispatch)=>{
     return axios.post(CUSTLOGINURL+"/login",data)
     .then(Response =>{
-        localStorage.setItem("login",JSON.stringify(Response.data));
+        localStorage.setItem("custlogin",JSON.stringify(Response.data));
         console.log("api call");
         dispatch(loginSuccess(Response.data));
     })
@@ -46,7 +46,7 @@ export const registerCustomer=(payload)=>{
       password:payload.password
   }
   return(dispatch)=>{
-      return axios.post(CUSTLOGINURL+"/addCustomer",data)
+      return axios.post("http://localhost:8889/customer/addCustomer",data)
       .then(Response =>{
           //localStorage.setItem("register",JSON.stringify(Response.data));
           console.log("api call");

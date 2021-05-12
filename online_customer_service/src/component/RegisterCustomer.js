@@ -26,7 +26,7 @@ class RegisterCustomer extends Component{
             city:this.state.city,
             password:this.state.password
         }
-        this.props.CustomerAction.regiserCustomer(payload);
+        this.props.CustomerAction.registerCustomer(payload);
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){

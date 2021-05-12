@@ -17,12 +17,12 @@ this.state={
        email:this.state.email,
        password:this.state.password
     }
-      this.props.CustomerAction.LoginValidate(payload);
+      this.props.CustomerAction.loginValidate(payload);
       usr.preventDefault();
 }
 onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
 render(){
-    let login=this.props.login;
+    let login=this.props.custlogin;
     console.log("inside render method"+login);
     if(login!==undefined){
        
