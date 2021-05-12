@@ -6,6 +6,8 @@ import AdminLogin from './component/AdminLogin';
 import AddDepartment from './component/AddDepartment';
 import ViewAllDepartments from './component/ViewAllDepartments';
 import DeleteDepartment from './component/DeleteDepartment';
+import CustomerLogin from './component/CustomerLogin';
+import RegisterCustomer from './component/RegisterCustomer';
 import './App.css';
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/dept" exact component={AddDepartment}></Route>
           <Route path="/alldept" exact component={ViewAllDepartments}></Route>
           <Route path="/dept/:id" exact component={DeleteDepartment}></Route>
+          <Route path="/customer" exact component={CustomerLogin}></Route>
+          <Route path="/addCust" exact component={RegisterCustomer}></Route>
         </Switch>
       </Router>
     </div>
