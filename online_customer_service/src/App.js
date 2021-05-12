@@ -8,6 +8,7 @@ import ViewAllDepartments from './component/ViewAllDepartments';
 import DeleteDepartment from './component/DeleteDepartment';
 import ViewAllOperators from './component/ViewAllOperators';
 import DeleteOperator from './component/DeleteOperator';
+import ViewDepartmentById from './component/ViewDepartmentById';
 import './App.css';
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dept/:id" exact component={DeleteDepartment}></Route>
           <Route path="/alloperator" exact component={ViewAllOperators}></Route>
           <Route path="/operator/:id" exact component={DeleteOperator}></Route>
+          <Route path="/viewdepbyid" exact component={ViewDepartmentById}></Route>
         </Switch>
       </Router>
     </div>

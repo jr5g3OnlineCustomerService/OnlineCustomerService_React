@@ -1,7 +1,8 @@
 const initialState={
 
     dept:[],
-    delitem:undefined
+    delitem:undefined,
+    deptid:[]
 }
 export default function DepartmentReducer(state=initialState,action){
     switch(action.type){
@@ -21,6 +22,11 @@ export default function DepartmentReducer(state=initialState,action){
                     ...state,
                     delitem : 'deleted'
                 };
+        case 'GET_DEPT_BY_CODE_SUCCESS':
+                return{
+                    ...state,
+                    dept:action.dept
+                }
         default:
             return state
 }
