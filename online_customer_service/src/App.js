@@ -11,6 +11,9 @@ import RegisterCustomer from './component/RegisterCustomer';
 import ViewAllOperators from './component/ViewAllOperators';
 import DeleteOperator from './component/DeleteOperator';
 import ViewDepartmentById from './component/ViewDepartmentById';
+import ViewIssueById from './component/ViewIssueById';
+import ViewAllIssues from './component/ViewAllIssues';
+import AddIssue from './component/AddIssue';
 import './App.css';
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/alloperator" exact component={ViewAllOperators}></Route>
           <Route path="/operator/:id" exact component={DeleteOperator}></Route>
           <Route path="/viewdepbyid" exact component={ViewDepartmentById}></Route>
+          <Route path="/addIssue" exact component={AddIssue}></Route>
+          <Route path="/viewissuebyid" exact component={ViewIssueById}></Route>
+          <Route path="/viewallissues" exact component={ViewAllIssues}></Route>
         </Switch>
       </Router>
     </div>
