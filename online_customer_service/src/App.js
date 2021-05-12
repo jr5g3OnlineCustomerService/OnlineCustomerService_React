@@ -6,8 +6,14 @@ import AdminLogin from './component/AdminLogin';
 import AddDepartment from './component/AddDepartment';
 import ViewAllDepartments from './component/ViewAllDepartments';
 import DeleteDepartment from './component/DeleteDepartment';
+<<<<<<< HEAD
 import CustomerLogin from './component/CustomerLogin';
 import RegisterCustomer from './component/RegisterCustomer';
+=======
+import ViewAllOperators from './component/ViewAllOperators';
+import DeleteOperator from './component/DeleteOperator';
+import ViewDepartmentById from './component/ViewDepartmentById';
+>>>>>>> 89cdef9634e7acf757b4359bbb1c963470a7ba9f
 import './App.css';
 function App() {
   return (
@@ -20,8 +26,14 @@ function App() {
           <Route path="/dept" exact component={AddDepartment}></Route>
           <Route path="/alldept" exact component={ViewAllDepartments}></Route>
           <Route path="/dept/:id" exact component={DeleteDepartment}></Route>
+<<<<<<< HEAD
           <Route path="/customer" exact component={CustomerLogin}></Route>
           <Route path="/addCust" exact component={RegisterCustomer}></Route>
+=======
+          <Route path="/alloperator" exact component={ViewAllOperators}></Route>
+          <Route path="/operator/:id" exact component={DeleteOperator}></Route>
+          <Route path="/viewdepbyid" exact component={ViewDepartmentById}></Route>
+>>>>>>> 89cdef9634e7acf757b4359bbb1c963470a7ba9f
         </Switch>
       </Router>
     </div>

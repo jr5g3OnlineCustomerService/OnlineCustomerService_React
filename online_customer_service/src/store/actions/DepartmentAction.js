@@ -68,3 +68,26 @@ export const deleteItem = (code) =>{
         });
     };
 };
+
+export const getdeptByCodeSuccess = (dept) => {
+    console.log("inside getdeptByCodeSuccess method");
+    return {
+        type : 'GET_DEPT_BY_CODE_SUCCESS',dept
+    }
+};
+
+export const findDepById = (payload) => {
+    console.log("inside getDepartmentByCode method");
+    return (dispatch)=> {
+        return axios.get(DepartmentURL+"/findDepartment",payload)
+        .then(Response => {
+            localStorage.setItem("dept",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getdeptByCodeSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};
