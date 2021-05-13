@@ -1,7 +1,8 @@
 const initialState={
 
     opt:[],
-    deloperator:undefined
+    deloperator:undefined,
+    getop:[]
 }
 export default function OperatorReducer(state=initialState,action){
     switch(action.type){
@@ -21,6 +22,11 @@ export default function OperatorReducer(state=initialState,action){
                     ...state,
                     deloperator : 'deleted'
                 };
+        case 'GET_OPERATOR_BY_CODE_SUCCESS' :
+            return {
+                ...state,
+                getop : action.getop
+        };
         default:
             return state
 }

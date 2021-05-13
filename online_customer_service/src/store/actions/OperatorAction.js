@@ -100,3 +100,26 @@ export const deleteoperator = (code) =>{
         });
     };
 };
+
+export const getOpByCodeSuccess = (getop) => {
+    console.log("inside getItemByCodeSuccess method");
+    return {
+        type : 'GET_OPERATOR_BY_CODE_SUCCESS',getop
+    }
+};
+
+export const viewopbyid = (code) => {
+    console.log("inside getItemByCode method");
+    return (dispatch)=> {
+        return axios.get("http://localhost:8889/admin/findOperator/"+code)
+        .then(Response => {
+            localStorage.setItem("getop",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getOpByCodeSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};

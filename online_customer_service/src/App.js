@@ -14,6 +14,7 @@ import ViewDepartmentById from './component/ViewDepartmentById';
 import ViewIssueById from './component/ViewIssueById';
 import ViewAllIssues from './component/ViewAllIssues';
 import AddIssue from './component/AddIssue';
+import ViewOperatorById from './component/ViewOperatorById'
 import './App.css';
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/addCust" exact component={RegisterCustomer}></Route>
           <Route path="/alloperator" exact component={ViewAllOperators}></Route>
           <Route path="/operator/:id" exact component={DeleteOperator}></Route>
+          <Route path="/viewoperator/:id" exact component={ViewOperatorById}></Route>
           <Route path="/viewdepbyid" exact component={ViewDepartmentById}></Route>
           <Route path="/addIssue" exact component={AddIssue}></Route>
           <Route path="/viewissuebyid" exact component={ViewIssueById}></Route>

@@ -23,11 +23,10 @@ render()
                 <tr>
                     <th>OPERATOR CODE</th>
                     <th>FIRST NAME</th>
-                    <th>LAST NAME</th>
-                    <th>EMAIL</th>
-                    <th>MOBILE</th>
+                    
                     <th>CITY</th>
-                    <th>PASSWORD</th>
+                   
+                    
 
                 </tr>
             </thead>
@@ -37,15 +36,15 @@ render()
                      <tr key={operator.operatorId}align="center">
                          <td>{operator.operatorId}</td>
                          <td>{operator.firstName}</td>
-                         <td>{operator.lastName}</td>
-                         <td>{operator.email}</td>
-                         <td>{operator.mobile}</td>
+                        
                          <td>{operator.city}</td>
-                         <td>{operator.password}</td>
+                         
 
 
                          <td><button className="btn btn-warning">Update</button></td>
                          <td><Link to={`/operator/${operator.operatorId}`}><button className="btn btn-danger">Delete</button></Link></td>
+                         <td><Link to={`/viewoperator/${operator.operatorId}`}><button className="btn btn-danger">View</button></Link></td>
+                         <td><Link to={`/viewocustomername/${this.state.firstName}`}><button className="btn btn-danger">View</button></Link></td>
                      </tr>
                     
                       )}
