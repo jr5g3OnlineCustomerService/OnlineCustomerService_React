@@ -2,8 +2,12 @@ const initialState={
 
     opt:[],
     deloperator:undefined,
-    getop:[]
+    getop:[],
+    byid:[],
+    ctrname:[],
+    ctrmail :[]
 }
+
 export default function OperatorReducer(state=initialState,action){
     switch(action.type){
        /* case 'ADD_SUCCESS':
@@ -27,12 +31,21 @@ export default function OperatorReducer(state=initialState,action){
                 ...state,
                 getop : action.getop
         };
-
-        case 'ADD_SUCCESS':
+       case 'GET_CUSTOMER_BY_ID_SUCCESS' :
             return{
-                ...state,
-                adsol:action.adsol
-            };
+              ...state,
+              byid : action.byid
+        };
+      case 'GET_CUSTOMER_BY_NAME_SUCCESS' :
+            return{
+             ...state,
+              ctrname : action.ctrname
+        };
+       case 'GET_CUSTOMER_BY_EMAIL_SUCCESS' :
+            return{
+             ...state,
+              ctrmail : action.ctrmail
+        };
         default:
             return state
 }

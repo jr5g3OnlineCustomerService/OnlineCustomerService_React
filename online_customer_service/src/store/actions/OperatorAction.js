@@ -152,3 +152,71 @@ export const addSol1= (payload)=>{
         });
     };
 };
+export const getCustomerByIdSuccess = (byid) => {
+    console.log("inside getItemByCodeSuccess method");
+    return {
+        type : 'GET_CUSTOMER_BY_ID_SUCCESS',byid
+    }
+};
+
+export const viewCustById = (id) => {
+    console.log("inside viewCustById method");
+    return (dispatch)=> {
+        return axios.get("http://localhost:8889/operator/findCustomerById/"+id)
+        .then(Response => {
+            localStorage.setItem("byid",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getCustomerByIdSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};
+
+export const getCustomerByNameSuccess = (ctrname) => {
+    console.log("inside getItemByNameSuccess method");
+    return {
+        type : 'GET_CUSTOMER_BY_NAME_SUCCESS',ctrname
+    }
+};
+
+export const viewCustByName = (name) => {
+    console.log("inside viewCustByName method");
+    return (dispatch)=> {
+        return axios.get("http://localhost:8889/operator/findCustomerByName/"+name)
+        .then(Response => {
+            localStorage.setItem("ctrname",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getCustomerByNameSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};
+
+export const getCustomerByEmailSuccess = (ctrmail) => {
+    console.log("inside getItemByEmailSuccess method");
+    return {
+        type : 'GET_CUSTOMER_BY_EMAIL_SUCCESS',ctrmail
+    }
+};
+
+export const viewCustByEmail = (email) => {
+    console.log("inside viewCustByEmail method");
+    return (dispatch)=> {
+        return axios.get("http://localhost:8889/operator/findCustomerByEmail/"+email)
+        .then(Response => {
+            localStorage.setItem("ctrmail",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getCustomerByEmailSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};

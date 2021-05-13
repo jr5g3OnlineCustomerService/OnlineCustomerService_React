@@ -16,6 +16,10 @@ import ViewAllIssues from './component/ViewAllIssues';
 import AddIssue from './component/AddIssue';
 import AddChat from './component/AddChat';
 import UpdateDepartment from './component/UpdateDepartment';
+import ViewCustomerById from './component/ViewCustomerById';
+import ViewCustomerByName from './component/ViewCustomerByName';
+import ViewCustomerByEmail from './component/ViewCustomerByEmail';
+import ViewCustomer from './component/ViewCustomer';
 import './App.css';
 import ViewChatIssue from './component/ViewChatIssue';
 function App() {
@@ -40,6 +44,10 @@ function App() {
           <Route path="/addChat" exact component={AddChat}></Route>
           <Route path="/viewChatissues" exact component={ViewChatIssue}></Route>
           <Route path="/updatedept"exact component={UpdateDepartment}></Route>
+          <Route path="/viewcustByid/:id" exact component={ViewCustomerById}></Route>
+          <Route path="/viewcustByname/:name" exact component={ViewCustomerByName}></Route>
+          <Route path="/viewcustByemail/:email" exact component={ViewCustomerByEmail}></Route>
+          <Route path="/viewcust" exact component={ViewCustomer}></Route>
           <Route></Route>
         </Switch>
       </Router>
