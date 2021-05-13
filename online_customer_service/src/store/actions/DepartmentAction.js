@@ -91,3 +91,28 @@ export const findDepById = (payload) => {
         });
     };
 };
+export const editDeptSuccess=()=>{
+    console.log("inside editItemSuccess method");
+    return {
+        type : 'DEPT_EDITED'
+    }
+};
+
+export const modifydept = (payload) =>{
+    console.log("inside modify department method");
+    let data = {
+        departmentID : payload.departmentID,
+        departmentName : payload.departmentName
+    }
+    return (dispatch)=> {
+        return axios.post(DepartmentURL+"/updateDepartment",data)
+        .then(Response => {
+            console.log("api call");
+            dispatch(editDeptSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

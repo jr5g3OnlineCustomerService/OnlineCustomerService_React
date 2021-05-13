@@ -2,7 +2,8 @@ const initialState={
 
     dept:[],
     delitem:undefined,
-    deptid:[]
+    deptid:undefined,
+    editdept:undefined,
 }
 export default function DepartmentReducer(state=initialState,action){
     switch(action.type){
@@ -26,7 +27,13 @@ export default function DepartmentReducer(state=initialState,action){
                 return{
                     ...state,
                     dept:action.dept
+    
                 }
+                case 'DEPT_EDITED' :
+                    return {
+                        ...state,
+                        editdept : 'updated'
+                    }
         default:
             return state
 }

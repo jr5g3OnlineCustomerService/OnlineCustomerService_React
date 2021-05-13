@@ -14,11 +14,10 @@ import ViewDepartmentById from './component/ViewDepartmentById';
 import ViewIssueById from './component/ViewIssueById';
 import ViewAllIssues from './component/ViewAllIssues';
 import AddIssue from './component/AddIssue';
-import ViewOperatorById from './component/ViewOperatorById'
-import AddSolution from './component/AddSolution';
-import  ViewSolById from './component/ViewSolById';
-import ViewAllSolutions from './component/ViewAllSolutions';
+import AddChat from './component/AddChat';
+import UpdateDepartment from './component/UpdateDepartment';
 import './App.css';
+import ViewChatIssue from './component/ViewChatIssue';
 function App() {
   return (
     <div className="App">
@@ -34,14 +33,14 @@ function App() {
           <Route path="/addCust" exact component={RegisterCustomer}></Route>
           <Route path="/alloperator" exact component={ViewAllOperators}></Route>
           <Route path="/operator/:id" exact component={DeleteOperator}></Route>
-          <Route path="/viewoperator/:id" exact component={ViewOperatorById}></Route>
           <Route path="/viewdepbyid" exact component={ViewDepartmentById}></Route>
           <Route path="/addIssue" exact component={AddIssue}></Route>
           <Route path="/viewissuebyid" exact component={ViewIssueById}></Route>
           <Route path="/viewallissues" exact component={ViewAllIssues}></Route>
-          <Route path="/addSolution"exact component={AddSolution}></Route>
-          <Route path="/viewSolById" exact component={ViewSolById}></Route>
-          <Route path="/allSolutions"exact component={ViewAllSolutions}></Route>
+          <Route path="/addChat" exact component={AddChat}></Route>
+          <Route path="/viewChatissues" exact component={ViewChatIssue}></Route>
+          <Route path="/updatedept"exact component={UpdateDepartment}></Route>
+          <Route></Route>
         </Switch>
       </Router>
     </div>
