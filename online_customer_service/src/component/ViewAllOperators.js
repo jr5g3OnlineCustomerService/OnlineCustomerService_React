@@ -44,7 +44,6 @@ render()
                          <td><button className="btn btn-warning">Update</button></td>
                          <td><Link to={`/operator/${operator.operatorId}`}><button className="btn btn-danger">Delete</button></Link></td>
                          <td><Link to={`/viewoperator/${operator.operatorId}`}><button className="btn btn-danger">View</button></Link></td>
-                         <td><Link to={`/viewocustomername/${this.state.firstName}`}><button className="btn btn-danger">View</button></Link></td>
                      </tr>
                     
                       )}
