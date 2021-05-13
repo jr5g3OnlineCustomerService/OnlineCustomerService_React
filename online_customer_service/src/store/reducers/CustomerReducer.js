@@ -1,6 +1,8 @@
 const initialState={
     custlogin: undefined,
-    customerReg: undefined
+    customerReg: undefined,
+    cust:[],
+    sol:[]
 }
 export default function CustomerReducer(state=initialState,action){
     switch(action.type){
@@ -15,6 +17,16 @@ export default function CustomerReducer(state=initialState,action){
                     ...state,
                     customerReg : action.customerReg
                 };
+                case 'GET_SOL_BY_CODE_SUCCESS':
+                    return{
+                        ...state,
+                        cust:action.cust
+                    }
+                    case 'GET_SOLUTIONALL_SUCCESS':
+                        return{
+                            ...state,
+                            sol:action.sol
+                        };    
             default:
                 return state
         }

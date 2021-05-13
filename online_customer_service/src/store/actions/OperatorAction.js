@@ -123,3 +123,32 @@ export const viewopbyid = (code) => {
         });
     };
 };
+
+export const AddSolutionSuccess=()=>{
+	console.log("inside addSolution method");
+	alert("Solution added successfully");
+	return{
+		type:'ADD_SUCCESS'
+	}
+};
+
+export const addSol1= (payload)=>{
+	console.log("inside addSolution method");
+	let data={
+		solutionDescription:payload.solutionDescription,
+                issueId:payload.issueId,
+                operatorId:payload.operatorId
+	}
+	return(dispatch)=>{
+		return axios.post(OperatorURL+"/addSolution",data)
+  .then(Response =>{
+           // localStorage.setItem("register",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(AddSolutionSuccess());
+        })
+        .catch(Error=>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};

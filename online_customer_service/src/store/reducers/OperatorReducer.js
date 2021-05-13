@@ -27,6 +27,12 @@ export default function OperatorReducer(state=initialState,action){
                 ...state,
                 getop : action.getop
         };
+
+        case 'ADD_SUCCESS':
+            return{
+                ...state,
+                adsol:action.adsol
+            };
         default:
             return state
 }

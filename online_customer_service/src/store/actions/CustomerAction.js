@@ -59,3 +59,44 @@ export const registerCustomer=(payload)=>{
   };
 
 };
+
+export const getSolByCodeSuccess = (cust) => {
+    console.log("inside getSolByCodeSuccess method");
+    return {
+        type : 'GET_SOL_BY_CODE_SUCCESS',cust
+    }
+};
+
+export const findSolById = (payload) => {
+    console.log("inside getSolutionByCode method");
+    return (dispatch)=> {
+        return axios.get(CUSTLOGINURL+"/viewSolutionsById",payload)
+        .then(Response => {
+            localStorage.setItem("cust",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getSolByCodeSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};
+
+export const getSolutionSuccess = (sol) => {
+    console.log("inside getissueByCodeSuccess method");
+    return {
+        type : 'GET_SOLUTIONALL_SUCCESS',sol
+    }
+};
+export const getSolutions=()=>{
+    console.log("Inside getSolutions");
+    return(dispatch)=>{
+        return axios.get("http://localhost:8889/customer/allSolutions")
+        .then(Response=>{
+            localStorage.setItem("issue",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getSolutionSuccess(Response.data));
+        })
+    };
+};

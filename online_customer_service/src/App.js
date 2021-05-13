@@ -15,6 +15,9 @@ import ViewIssueById from './component/ViewIssueById';
 import ViewAllIssues from './component/ViewAllIssues';
 import AddIssue from './component/AddIssue';
 import ViewOperatorById from './component/ViewOperatorById'
+import AddSolution from './component/AddSolution';
+import  ViewSolById from './component/ViewSolById';
+import ViewAllSolutions from './component/ViewAllSolutions';
 import './App.css';
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
           <Route path="/addIssue" exact component={AddIssue}></Route>
           <Route path="/viewissuebyid" exact component={ViewIssueById}></Route>
           <Route path="/viewallissues" exact component={ViewAllIssues}></Route>
+          <Route path="/addSolution"exact component={AddSolution}></Route>
+          <Route path="/viewSolById" exact component={ViewSolById}></Route>
+          <Route path="/allSolutions"exact component={ViewAllSolutions}></Route>
         </Switch>
       </Router>
     </div>
