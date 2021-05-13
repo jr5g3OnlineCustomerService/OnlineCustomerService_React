@@ -8,8 +8,8 @@ class UpdateDepartment extends Component {
     constructor(props){
         super(props)
         this.state = {
-            departmentID : props.location.state.depts.departmentID,
-            departmentName : props.location.state.depts.departmentName
+            departmentID : props.location.state.dept.departmentID,
+            departmentName : props.location.state.dept.departmentName
         }
     }
     componentDidMount(){
@@ -22,14 +22,16 @@ class UpdateDepartment extends Component {
             departmentName : this.state.departmentName,
         }
         this.props.DepartmentAction.modifydept(payload);
-        this.props.history.push("/alldept");
+      
+        window.location.href="/alldept";
+       
     }
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
-        let depts = this.props.deptid;
-        alert(depts);
+       
+        
         return(
             <div>
 			    <h1>Update  Item </h1>

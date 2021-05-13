@@ -31,7 +31,7 @@ render()
                      <tr key={dept.departmentID}align="center">
                          <td>{dept.departmentID}</td>
                          <td>{dept.departmentName}</td>
-                         <td><button className="btn btn-warning">Update</button></td>
+                         <td><Link to={{pathname:'/updatedept',state:{dept}}}><button className="btn btn-warning">Update</button></Link></td>
                          <td><Link to={`/dept/${dept.departmentID}`}><button className="btn btn-danger">Delete</button></Link></td>
                      </tr>
                     
