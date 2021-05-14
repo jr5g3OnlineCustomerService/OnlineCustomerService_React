@@ -5,7 +5,8 @@ const initialState={
     getop:[],
     byid:[],
     ctrname:[],
-    ctrmail :[]
+    ctrmail :[],
+    editpass:undefined,
 }
 
 export default function OperatorReducer(state=initialState,action){
@@ -46,6 +47,11 @@ export default function OperatorReducer(state=initialState,action){
              ...state,
               ctrmail : action.ctrmail
         };
+        case 'PASSWORD_EDITED':
+            return{
+                ...state,
+                editpass:'edited'
+            };
         default:
             return state
 }

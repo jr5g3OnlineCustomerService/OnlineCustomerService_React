@@ -54,7 +54,6 @@ class UpdateDepartment extends Component {
 function mapStateToProps(state) {
     return {
        editdept : state.DepartmentReducer.editdept,
-       deptid:state.DepartmentReducer.deptid,
        };
    }
    function mapDispatchToProps(dispatch){

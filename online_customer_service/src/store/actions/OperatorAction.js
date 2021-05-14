@@ -220,3 +220,29 @@ export const viewCustByEmail = (email) => {
         });
     };
 };
+export const editSuccess=()=>{
+    console.log("inside edit Success method");
+    alert("password updated");
+    return {
+        type : 'PASSWORD_EDITED'
+    }
+};
+
+export const changepassword = (payload) =>{
+    console.log("inside change password method");
+    let data = {
+        operatorId : payload.operatorId,
+        password : payload.password
+    }
+    return (dispatch)=> {
+        return axios.put(OperatorURL+"/ChangePassword",data)
+        .then(Response => {
+            console.log("api call");
+            dispatch(editSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

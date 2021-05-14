@@ -52,6 +52,7 @@ function App() {
           <Route path="/viewcust" exact component={ViewCustomer}></Route>
           <Route path="/viewoperator/:id" exact component={ViewOperatorById}></Route>
           <Route path="/close/:id" exact component={CloseIssue}></Route>
+          <Route path="/opchangepassword" exact component={OperatorChangePassword}></Route>
           <Route></Route>
         </Switch>
       </Router>
