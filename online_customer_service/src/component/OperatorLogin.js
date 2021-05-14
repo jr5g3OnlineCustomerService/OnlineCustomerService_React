@@ -27,7 +27,8 @@ class OperatorLogin extends Component{
         console.log("inside render method"+login);
         if(login!==undefined){
            
-          alert("Success");
+          alert("Success"+login.email);
+          window.location.href="/viewallissues?Id="+login.operatorId;
         }
         return(
         <div class="row">
@@ -46,7 +47,7 @@ class OperatorLogin extends Component{
 }
 function mapStateToProps(state){
     return{
-       login : state.LoginReducer.login
+       login : state.OperatorReducer.login
     };
 }
 function mapDispatchToProps(dispatch){

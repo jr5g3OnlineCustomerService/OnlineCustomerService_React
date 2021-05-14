@@ -7,6 +7,7 @@ const initialState={
     ctrname:[],
     ctrmail :[],
     editpass:undefined,
+    login:undefined
 }
 
 export default function OperatorReducer(state=initialState,action){
@@ -51,6 +52,12 @@ export default function OperatorReducer(state=initialState,action){
             return{
                 ...state,
                 editpass:'edited'
+            };
+            case 'LOGIN_SUCCESS':
+            return{
+                ...state,
+                login : action.login
+            
             };
         default:
             return state

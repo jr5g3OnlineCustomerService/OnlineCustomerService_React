@@ -10,8 +10,11 @@ class ViewAllIssues extends Component{
         super(props)
     }
 componentDidMount(){
-    
-    this.props.IssueAction.getIssues(1)
+    //let log=this.props.login;
+    let search=window.location.search;
+        let params=new URLSearchParams(search);
+        let operatorId=params.get('Id')
+    this.props.IssueAction.getIssues(operatorId)
 }
 render()
 {
@@ -52,7 +55,8 @@ render()
 }
 function mapStateToProps(state){
     return{
-        issue:state.IssueReducer.issue
+        issue:state.IssueReducer.issue,
+        login:state.OperatorReducer.login
     };
 }
 function mapDispatchToProps(dispatch){
