@@ -6,11 +6,12 @@ import {Link} from 'react-router-dom';
 import * as IssueAction from '../store/actions/IssueAction'
 
 class ViewAllIssues extends Component{
-  /* constructor(props){
+   constructor(props){
         super(props)
-    }*/
+    }
 componentDidMount(){
-    this.props.IssueAction.getIssues()
+    
+    this.props.IssueAction.getIssues(1)
 }
 render()
 {
@@ -35,9 +36,9 @@ render()
                      <tr key={issue.issueId}align="center">
                          <td>{issue.issueId}</td>
                          <td>{issue.issueType}</td>
-			 <td>{issue.description}</td>
-			<td>{issue.issueStatus}</td>
-
+			             <td>{issue.description}</td>
+			             <td>{issue.issueStatus}</td>
+                         <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
                        
                      </tr>
                     

@@ -39,10 +39,10 @@ export const getIssueSuccess = (issue) => {
         type : 'GET_ISSUEALL_SUCCESS',issue
     }
 };
-export const getIssues=()=>{
+export const getIssues=(id)=>{
     console.log("Inside getIssues");
     return(dispatch)=>{
-        return axios.get("http://localhost:8889/operator/allIssues")
+        return axios.get("http://localhost:8889/operator/allIssues/"+id)
         .then(Response=>{
             localStorage.setItem("issue",JSON.stringify(Response.data));
             console.log("api call");
@@ -71,3 +71,25 @@ export const findIssueById = (payload) => {
         });
     };
 };
+export const closeIssueSuccess=()=>{
+    console.log("inside deleteItemSuccess method");
+    return {
+        type : 'ISSUE_CLOSED'
+    }
+};
+
+export const closeissue = (code) =>{
+    console.log("inside deleteItem method");
+    return (dispatch)=> {
+        return axios.put(OperatorURL+"/closeCustomer/"+code)
+        .then(Response => {
+            console.log("api call");
+            dispatch(closeIssueSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};
+

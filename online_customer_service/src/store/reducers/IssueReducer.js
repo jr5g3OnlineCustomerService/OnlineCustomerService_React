@@ -2,6 +2,7 @@ const initialState={
 
     issue:[],
     opt:undefined,
+    close:undefined
     //addIssue:[]
 }
 export default function IssueReducer(state=initialState,action){
@@ -20,6 +21,11 @@ export default function IssueReducer(state=initialState,action){
                 return{
                     ...state,
                     opt:action.opt
+                };
+    case 'ISSUE_CLOSED':
+                return{
+                    ...state,
+                    close:'closed'
                 };
                 default:
                 return state

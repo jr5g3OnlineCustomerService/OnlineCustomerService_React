@@ -23,6 +23,7 @@ import ViewCustomer from './component/ViewCustomer';
 import './App.css';
 import ViewChatIssue from './component/ViewChatIssue';
 import ViewOperatorById from './component/ViewOperatorById';
+import CloseIssue from './component/CloseIssue';
 function App() {
   return (
     <div className="App">
@@ -50,6 +51,7 @@ function App() {
           <Route path="/viewcustByemail/:email" exact component={ViewCustomerByEmail}></Route>
           <Route path="/viewcust" exact component={ViewCustomer}></Route>
           <Route path="/viewoperator/:id" exact component={ViewOperatorById}></Route>
+          <Route path="/close/:id" exact component={CloseIssue}></Route>
           <Route></Route>
         </Switch>
       </Router>
