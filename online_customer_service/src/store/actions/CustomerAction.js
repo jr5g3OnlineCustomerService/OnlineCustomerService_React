@@ -100,3 +100,29 @@ export const getSolutions=()=>{
         })
     };
 };
+export const editSuccess=()=>{
+    console.log("inside edit Success method");
+    alert("password updated");
+    return {
+        type : 'CUST_PASSWORD_EDITED'
+    }
+};
+
+export const customerchangepassword = (payload) =>{
+    console.log("inside change password method");
+    let data = {
+        //customerId : payload.customerId,
+        password : payload.password
+    }
+    return (dispatch)=> {
+        return axios.put(CUSTLOGINURL+"/ChangePassword",data)
+        .then(Response => {
+            console.log("api call");
+            dispatch(editSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

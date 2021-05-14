@@ -2,7 +2,8 @@ const initialState={
     custlogin: undefined,
     customerReg: undefined,
     cust:[],
-    sol:[]
+    sol:[],
+    editpass:undefined,
 }
 export default function CustomerReducer(state=initialState,action){
     switch(action.type){
@@ -26,7 +27,12 @@ export default function CustomerReducer(state=initialState,action){
                         return{
                             ...state,
                             sol:action.sol
-                        };    
+                        };  
+                    case 'CUST_PASSWORD_EDITED':
+                            return{
+                                ...state,
+                                editpass:'edited'
+                            };  
             default:
                 return state
         }

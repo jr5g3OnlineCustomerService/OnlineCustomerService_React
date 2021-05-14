@@ -27,6 +27,7 @@ render(){
     if(login!==undefined){
        
       alert("Success");
+      window.location.href="/Customerhome?Id="+login.customerId;
     }
 return(
 <div class="row">
