@@ -28,6 +28,7 @@ import OperatorChangePassword from './component/OperatorChangePassword';
 import OperatorHome from './component/OperatorHome';
 import CustomerHomePage from './component/CustomerHomePage';
 import CustomerChangePassword from './component/CustomerChangePassword';
+import ViewAllCustomerIssue from './component/ViewAllCustomerIssue';
 function App() {
   return (
     <div className="App">
@@ -60,6 +61,7 @@ function App() {
           <Route path="/operatorhome" exact component={OperatorHome}></Route>
           <Route path="/Customerhome" exact component={CustomerHomePage}></Route>
           <Route path="/custchangepassword" exact component={CustomerChangePassword}></Route>
+          <Route path="/viewallcustissue" exact component={ViewAllCustomerIssue}></Route>
           <Router></Router>
         </Switch>
       </Router>

@@ -126,3 +126,21 @@ export const customerchangepassword = (payload) =>{
         });
     };
 };
+
+export const getAllIssueSuccess = (issue) => {
+    console.log("inside getissueByCodeSuccess method");
+    return {
+        type : 'GET_ALL_ISSUE_SUCCESS',issue
+    }
+};
+export const getAllIssues=(id)=>{
+    console.log("Inside getIssues");
+    return(dispatch)=>{
+        return axios.get("http://localhost:8889/customer/viewAllIssue/"+id)
+        .then(Response=>{
+            localStorage.setItem("issue",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getAllIssueSuccess(Response.data));
+        })
+    };
+};

@@ -4,6 +4,7 @@ const initialState={
     cust:[],
     sol:[],
     editpass:undefined,
+    issue:[]
 }
 export default function CustomerReducer(state=initialState,action){
     switch(action.type){
@@ -32,7 +33,12 @@ export default function CustomerReducer(state=initialState,action){
                             return{
                                 ...state,
                                 editpass:'edited'
-                            };  
+                            };
+                     case 'GET_ALL_ISSUE_SUCCESS':
+                             return{
+                                 ...state,
+                                 issue:action.issue
+                                };  
             default:
                 return state
         }

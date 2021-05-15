@@ -19,6 +19,13 @@ class CustomerHomePage extends Component{
     
             window.location.href="/custchangepassword?Id="+customerId;
             };
+        toViewAllIssue=()=>{
+            let search=window.location.search;
+            let params=new URLSearchParams(search);
+            let customerId=params.get('Id')
+        
+            window.location.href="/viewallcustissue?Id="+customerId;
+                };
     render(){
         return(
             <div class="row">
@@ -27,6 +34,9 @@ class CustomerHomePage extends Component{
           </div>
           <div className="col-sm-8">
               <button className="btn btn-success" onClick={this.toChangePassword} >Change Password</button>
+          </div>
+          <div className="col-sm-8">
+              <button className="btn btn-success" onClick={this.toViewAllIssue} >View All Issues</button>
           </div>
       </div>
         ); 
