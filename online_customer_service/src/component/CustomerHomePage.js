@@ -29,8 +29,7 @@ class CustomerHomePage extends Component{
             window.location.href="/viewallcustissue?Id="+customerId;
                 };
     render(){
-         let cust=store.getState();
-        alert(cust);
+         
         return(
             <div class="row">
             <div className="col-sm-8">

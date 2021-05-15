@@ -30,6 +30,7 @@ import CustomerHomePage from './component/CustomerHomePage';
 import CustomerChangePassword from './component/CustomerChangePassword';
 import ViewAllCustomerIssue from './component/ViewAllCustomerIssue';
 import ReopenIssues from './component/ReopenIssues';
+import ModifyOperator from './component/ModifyOperator';
 
 function App() {
   return (
@@ -64,7 +65,8 @@ function App() {
           <Route path="/Customerhome" exact component={CustomerHomePage}></Route>
           <Route path="/custchangepassword" exact component={CustomerChangePassword}></Route>
           <Route path="/viewallcustissue" exact component={ViewAllCustomerIssue}></Route>
-          <Route  path="/reopn/:id" exact component={ReopenIssues}></Route>          
+          <Route  path="/reopn/:id" exact component={ReopenIssues}></Route>      
+          <Route path="/modifyopt" exact component ={ModifyOperator}></Route>    
           <Router></Router>
         </Switch>
       </Router>

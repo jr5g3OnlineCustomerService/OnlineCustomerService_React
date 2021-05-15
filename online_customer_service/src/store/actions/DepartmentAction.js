@@ -117,6 +117,47 @@ export const modifydept = (payload) =>{
     };
 };
 
+export const editOptSuccess=()=>{
+    console.log("inside EditOptSuccess method");
+    return {
+        type : 'OPT_EDITED'
+    }
+};
+
+export const modifyOpt = (payload) =>{
+    console.log("inside modify operator method");
+    let data = {
+        operatorId : payload.operatorId,
+        firstName : payload.firstName,
+        lastName : payload.lastName,
+        email : payload.email,  
+        city : payload.city,
+        mobile : payload.mobile, 
+        passowrd : payload.password,   
+        departmentID: payload.departmentID,
+    }
+    return (dispatch)=> {
+        return axios.post(DepartmentURL+"/updateOperator",data)
+        .then(Response => {
+            console.log("api call");
+            dispatch(editOptSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
