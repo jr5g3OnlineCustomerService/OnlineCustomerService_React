@@ -8,7 +8,9 @@ class OperatorLogin extends Component{
         super(props)
     }
 render(){
-
+    let data = sessionStorage.getItem('logindata');
+    debugger
+    alert(data);
     return(
         <div class="row">
               <div className="col-sm-8">
@@ -20,4 +22,16 @@ render(){
 }
 
 }
-export default(OperatorLogin);
+function mapStateToProps(state){
+    return{
+       login : state.OperatorReducer.login
+    };
+}
+function mapDispatchToProps(dispatch){
+    return{
+        //OperatorAction:bindActionCreators(OperatorAction,dispatch)
+    };
+
+}
+//export default(OperatorLogin);
+export default connect(mapStateToProps,mapDispatchToProps)(OperatorLogin);
