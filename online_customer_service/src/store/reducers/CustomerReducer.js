@@ -1,10 +1,11 @@
 const initialState={
-    custlogin: undefined,
+    custlogin:undefined,
     customerReg: undefined,
     cust:[],
     sol:[],
     editpass:undefined,
-    issue:[]
+    issue:[],
+    open:undefined,
 }
 export default function CustomerReducer(state=initialState,action){
     switch(action.type){
@@ -38,7 +39,12 @@ export default function CustomerReducer(state=initialState,action){
                              return{
                                  ...state,
                                  issue:action.issue
-                                };  
+                                }; 
+                    case 'ISSUE_OPENED' :
+                        return{
+                            ...state,
+                            open:'opened'
+                        };
             default:
                 return state
         }

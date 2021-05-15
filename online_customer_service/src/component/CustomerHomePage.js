@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as CustomerAction from '../store/actions/CustomerAction';
 
 class CustomerHomePage extends Component{
     constructor(props){
@@ -27,6 +29,8 @@ class CustomerHomePage extends Component{
             window.location.href="/viewallcustissue?Id="+customerId;
                 };
     render(){
+         let cust=store.getState();
+        alert(cust);
         return(
             <div class="row">
             <div className="col-sm-8">
@@ -42,4 +46,14 @@ class CustomerHomePage extends Component{
         ); 
     }
 }
-export default(CustomerHomePage);
+function mapStateToProps(state){
+    return{
+      custlogin: state.CustomerReducer.custlogin
+      };
+    }
+    function mapDispatchToProps(dispatch){
+    return{
+    CustomerAction: bindActionCreators(CustomerAction,dispatch)
+       };
+    }
+    export default connect(mapStateToProps,mapDispatchToProps)(CustomerHomePage);

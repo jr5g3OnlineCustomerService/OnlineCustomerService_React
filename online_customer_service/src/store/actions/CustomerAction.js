@@ -144,3 +144,24 @@ export const getAllIssues=(id)=>{
         })
     };
 };
+export const reopenIssueSuccess=()=>{
+    console.log("inside re open Success method");
+    return {
+        type : 'ISSUE_OPENED'
+    }
+};
+
+export const reopenissue = (code) =>{
+    console.log("inside reopen issues method");
+    return (dispatch)=> {
+        return axios.put(CUSTLOGINURL+"/reopenissue/"+code)
+        .then(Response => {
+            console.log("api call");
+            dispatch(reopenIssueSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

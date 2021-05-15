@@ -29,6 +29,7 @@ import OperatorHome from './component/OperatorHome';
 import CustomerHomePage from './component/CustomerHomePage';
 import CustomerChangePassword from './component/CustomerChangePassword';
 import ViewAllCustomerIssue from './component/ViewAllCustomerIssue';
+import ReopenIssues from './component/ReopenIssues';
 function App() {
   return (
     <div className="App">
@@ -62,6 +63,7 @@ function App() {
           <Route path="/Customerhome" exact component={CustomerHomePage}></Route>
           <Route path="/custchangepassword" exact component={CustomerChangePassword}></Route>
           <Route path="/viewallcustissue" exact component={ViewAllCustomerIssue}></Route>
+          <Route  path="/reopn/:id" exact component={ReopenIssues}></Route>          
           <Router></Router>
         </Switch>
       </Router>
