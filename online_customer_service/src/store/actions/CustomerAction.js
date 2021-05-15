@@ -111,7 +111,7 @@ export const editSuccess=()=>{
 export const customerchangepassword = (payload) =>{
     console.log("inside change password method");
     let data = {
-        //customerId : payload.customerId,
+        customerId : payload.customerId,
         password : payload.password
     }
     return (dispatch)=> {

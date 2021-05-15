@@ -19,7 +19,7 @@ class CustomerChangePassword extends Component {
     update= (e) =>{
         e.preventDefault();
         let payload = {
-            //customerId : this.state.customerId,
+            customerId :this.customerId.value,
             password : this.state.password,
         }
         this.props.CustomerAction.customerchangepassword(payload);
@@ -44,13 +44,13 @@ class CustomerChangePassword extends Component {
 				 <form >
 				    <div className="form-group">
                     <label>Enter Customer Id</label>
-						<input type="text" name="customerId" className="form-control" value={customerId} onChange={this.onChange}  readOnly></input><br></br>
+						<input type="text" name="customerId" className="form-control" value={customerId} ref={(input)=>{this.customerId=input}} readOnly></input><br></br>
 					    <label>Enter password</label>
 						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required"></input><br></br>
 					
                     </div>
 						<button className="btn btn-success" onClick={this.update}>update password</button>
-                        <Link to={`/Customerhome/${customerId}`}> <button className="btn btn-default">Cancel</button></Link> 
+                        <Link to={`/Customerhome?Id=${customerId}`}> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>
         );
