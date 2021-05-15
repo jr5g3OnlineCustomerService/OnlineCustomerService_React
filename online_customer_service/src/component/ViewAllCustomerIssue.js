@@ -1,11 +1,11 @@
 import React,{ Component} from 'react';
 import {connect} from 'react-redux';
-import * as OperatorAction from '../store/actions/OperatorAction';
+import * as CustomerAction from '../store/actions/CustomerAction';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
 import * as IssueAction from '../store/actions/IssueAction'
 
-class ViewAllIssues extends Component{
+class ViewAllCustomerIssue extends Component{
    constructor(props){
         super(props)
     }
@@ -13,8 +13,8 @@ componentDidMount(){
     //let log=this.props.login;
     let search=window.location.search;
         let params=new URLSearchParams(search);
-        let operatorId=params.get('Id')
-    this.props.IssueAction.getIssues(operatorId)
+        let customerId=params.get('Id')
+    this.props.CustomerAction.getAllIssues(customerId)
 }
 render()
 {
@@ -41,7 +41,7 @@ render()
                          <td>{issue.issueType}</td>
 			             <td>{issue.description}</td>
 			             <td>{issue.issueStatus}</td>
-                         <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
+                         <td><Link to={`/reopn/${issue.issueId}`}><button className="btn btn-danger">Open</button></Link></td>
                        
                      </tr>
                     
@@ -55,14 +55,14 @@ render()
 }
 function mapStateToProps(state){
     return{
-        issue:state.IssueReducer.issue,
-        login:state.OperatorReducer.login
+        issue:state.CustomerReducer.issue,
+        login:state.CustomerReducer.login
     };
 }
 function mapDispatchToProps(dispatch){
     return{
-        IssueAction:bindActionCreators(IssueAction,dispatch)
+        CustomerAction:bindActionCreators(CustomerAction,dispatch)
     };
 
 }
-export default connect(mapStateToProps,mapDispatchToProps)(ViewAllIssues);
+export default connect(mapStateToProps,mapDispatchToProps)(ViewAllCustomerIssue);

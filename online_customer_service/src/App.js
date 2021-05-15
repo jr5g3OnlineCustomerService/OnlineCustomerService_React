@@ -25,6 +25,11 @@ import ViewChatIssue from './component/ViewChatIssue';
 import ViewOperatorById from './component/ViewOperatorById';
 import CloseIssue from './component/CloseIssue';
 import OperatorChangePassword from './component/OperatorChangePassword';
+import OperatorHome from './component/OperatorHome';
+import CustomerHomePage from './component/CustomerHomePage';
+import CustomerChangePassword from './component/CustomerChangePassword';
+import ViewAllCustomerIssue from './component/ViewAllCustomerIssue';
+import ReopenIssues from './component/ReopenIssues';
 
 function App() {
   return (
@@ -55,7 +60,12 @@ function App() {
           <Route path="/viewoperator/:id" exact component={ViewOperatorById}></Route>
           <Route path="/close/:id" exact component={CloseIssue}></Route>
           <Route path="/opchangepassword" exact component={OperatorChangePassword}></Route>
-          <Route></Route>
+          <Route path="/operatorhome" exact component={OperatorHome}></Route>
+          <Route path="/Customerhome" exact component={CustomerHomePage}></Route>
+          <Route path="/custchangepassword" exact component={CustomerChangePassword}></Route>
+          <Route path="/viewallcustissue" exact component={ViewAllCustomerIssue}></Route>
+          <Route  path="/reopn/:id" exact component={ReopenIssues}></Route>          
+          <Router></Router>
         </Switch>
       </Router>
     </div>
