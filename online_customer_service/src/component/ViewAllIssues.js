@@ -49,6 +49,8 @@ render()
                        
               </tbody>
         </table><br/>
+        <Link to="/operatorhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Operator Home Page</button>
+   </Link>
     </div>
 );
 }

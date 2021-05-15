@@ -9,14 +9,14 @@ class ModifyOperator extends Component {
     constructor(props){
         super(props)
         this.state = {
-            operatorId : props.location.state.opt.operatorId,
-            firstName : props.location.state.opt.firstName,
- 	        lastName : props.location.state.opt.lastName,
-	        email : props.location.state.opt.email,  
-            city : props.location.state.opt.city,
-            mobile : props.location.state.opt.mobile, 
- 	        passowrd : props.location.state.opt.password,   
-            departmentID: props.location.state.opt.departmentID
+            operatorId : props.location.state.operator.operatorId,
+            firstName : props.location.state.operator.firstName,
+ 	        lastName : props.location.state.operator.lastName,
+	        email : props.location.state.operator.email,  
+            city : props.location.state.operator.city,
+            mobile : props.location.state.operator.mobile, 
+ 	        passowrd : props.location.state.operator.password,   
+            departmentID: props.location.state.operator.departmentID
     }
     }
     componentDidMount(){

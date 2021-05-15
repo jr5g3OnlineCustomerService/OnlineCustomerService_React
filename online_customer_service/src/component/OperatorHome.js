@@ -14,7 +14,7 @@ render(){
     return(
         <div class="row">
               <div className="col-sm-8">
-                <li><a href="/viewallissues"><span class="glyphicon glyphicon-user"></span>View All Issue</a></li>
+                <button><a href="/viewallissues"><span class="glyphicon glyphicon-user"></span>View All Issue</a></button>
             </div>
         </div>
 
