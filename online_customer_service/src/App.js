@@ -25,6 +25,7 @@ import ViewChatIssue from './component/ViewChatIssue';
 import ViewOperatorById from './component/ViewOperatorById';
 import CloseIssue from './component/CloseIssue';
 import OperatorChangePassword from './component/OperatorChangePassword';
+
 function App() {
   return (
     <div className="App">

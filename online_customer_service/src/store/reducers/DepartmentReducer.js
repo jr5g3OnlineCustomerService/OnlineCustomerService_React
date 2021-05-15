@@ -4,6 +4,7 @@ const initialState={
     delitem:undefined,
     deptid:undefined,
     editdept:undefined,
+   
 }
 export default function DepartmentReducer(state=initialState,action){
     switch(action.type){
@@ -34,6 +35,7 @@ export default function DepartmentReducer(state=initialState,action){
                         ...state,
                         editdept : 'updated'
                     }
+                    
         default:
             return state
 }
