@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as OperatorAction from '../store/actions/OperatorAction'
 import {Redirect} from 'react-router-dom';
+import OperatorHome from './OperatorHome';
 
 class OperatorLogin extends Component{
     constructor(props){
@@ -26,9 +27,11 @@ class OperatorLogin extends Component{
         let login=this.props.login;
         console.log("inside render method"+login);
         if(login!==undefined){
-           
-          alert("Success"+login.email);
-          window.location.href="/viewallissues?Id="+login.operatorId;
+         // alert(login.email)
+         debugger;
+         sessionStorage.setItem('logindata',login.operatorId);
+         // window.location.href="/viewallissues?Id="+login.operatorId;
+         window.location.href="/operatorhome";
         }
         return(
         <div class="row">
