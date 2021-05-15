@@ -41,6 +41,7 @@ render()
                          <td>{issue.issueType}</td>
 			             <td>{issue.description}</td>
 			             <td>{issue.issueStatus}</td>
+                         <td><Link to={{pathname:'/addSoln',state:{issue}}}><button className="btn btn-danger">Add Solution</button></Link></td>
                          <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
                        
                      </tr>

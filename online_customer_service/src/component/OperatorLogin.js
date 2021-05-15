@@ -29,7 +29,8 @@ class OperatorLogin extends Component{
         if(login!==undefined){
          // alert(login.email)
          debugger;
-         sessionStorage.setItem('logindata',login.operatorId);
+         sessionStorage.setItem('operatorId',login.operatorId);
+         sessionStorage.setItem('password',login.password);
          // window.location.href="/viewallissues?Id="+login.operatorId;
          window.location.href="/operatorhome";
         }

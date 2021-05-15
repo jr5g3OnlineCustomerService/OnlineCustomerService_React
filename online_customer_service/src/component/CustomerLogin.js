@@ -25,9 +25,13 @@ render(){
     let login=this.props.custlogin;
     console.log("inside render method"+login);
     if(login!==undefined){
-       
-      alert("Success");
-      window.location.href="/Customerhome?Id="+login.customerId;
+      debugger;
+      sessionStorage.setItem('customerId',login.customerId);
+      sessionStorage.setItem('password',login.password);
+      sessionStorage.setItem('firstName',login.firstName);
+      sessionStorage.setItem('lastName',login.lastName);
+      sessionStorage.setItem('email',login.email);
+      window.location.href="/Customerhome";
     }
 return(
 <div class="row">

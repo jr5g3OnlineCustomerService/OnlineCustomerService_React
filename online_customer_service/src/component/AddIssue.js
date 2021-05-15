@@ -1,8 +1,7 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as OperatorAction from '../store/actions/OperatorAction'
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import * as IssueAction from '../store/actions/IssueAction'
 
 class AddIssue extends Component{
@@ -13,7 +12,7 @@ class AddIssue extends Component{
             description:'',
             issueStatus:'',
             customerID:0,
-            operatorId:0
+            operatorId:sessionStorage.getItem('operatorId')
         }
         this.registration = this.registration.bind(this);
     }
@@ -45,7 +44,10 @@ class AddIssue extends Component{
                     <label>operatorId</label>
                     <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}></input>
                 </div>
-                <button className="btn btn-sucess" onClick={this.registration}>Click</button>
+                <button className="btn btn-sucess" onClick={this.registration}>Click</button><br/>
+<Link to="/operatorhome">
+                <button className="btn btn-success" style={{background:'#6C98FF'}}>Back to Operator Home Page</button>
+                </Link>
             </form>
         </div>
         ); 

@@ -9,10 +9,10 @@ class AddChat extends Component{
         super(props)
         this.state={
             complaints:'',
-            firstName : '',
-            lastName : '',
-            email :'',
-            customerId:'',
+            firstName : sessionStorage.getItem('firstName'),
+            lastName : sessionStorage.getItem('lastName'),
+            email :sessionStorage.getItem('email'),
+            customerId:sessionStorage.getItem('customerId'),
         }
         this.add = this.add.bind(this);
     }

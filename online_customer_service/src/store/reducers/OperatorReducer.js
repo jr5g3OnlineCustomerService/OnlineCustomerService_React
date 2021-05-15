@@ -7,16 +7,17 @@ const initialState={
     ctrname:[],
     ctrmail :[],
     editpass:undefined,
-    login:undefined
+    login:undefined,
+    adsol:undefined,
 }
 
 export default function OperatorReducer(state=initialState,action){
     switch(action.type){
-       /* case 'ADD_SUCCESS':
+        case 'ADD_SOLN_SUCCESS':
                 return{
                     ...state,
-                    operator:action.operator
-                };*/
+                    adsol:'added'
+                };
                 
         case 'GET_ALL_OPERATORS_SUCCESS':
                 return{

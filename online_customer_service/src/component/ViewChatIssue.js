@@ -2,6 +2,7 @@ import React,{ Component} from 'react';
 import {connect} from 'react-redux';
 import * as ChatAction from '../store/actions/ChatAction';
 import { bindActionCreators } from 'redux';
+import {Link} from 'react-router-dom';
 
 class ViewChatIssue extends Component{
   /* constructor(props){
@@ -48,6 +49,9 @@ render()
                        
               </tbody>
         </table><br/>
+        <Link to="/operatorhome">
+                <button className="btn btn-success" style={{background:'#6C98FF'}}>Back </button>
+                </Link>
     </div>
 );
 }

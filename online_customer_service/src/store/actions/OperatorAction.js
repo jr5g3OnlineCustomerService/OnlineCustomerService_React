@@ -128,7 +128,7 @@ export const AddSolutionSuccess=()=>{
 	console.log("inside addSolution method");
 	alert("Solution added successfully");
 	return{
-		type:'ADD_SUCCESS'
+		type:'ADD_SOLN_SUCCESS'
 	}
 };
 

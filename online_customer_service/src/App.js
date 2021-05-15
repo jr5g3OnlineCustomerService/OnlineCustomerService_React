@@ -31,6 +31,8 @@ import CustomerChangePassword from './component/CustomerChangePassword';
 import ViewAllCustomerIssue from './component/ViewAllCustomerIssue';
 import ReopenIssues from './component/ReopenIssues';
 import ModifyOperator from './component/ModifyOperator';
+import ViewSolById from './component/ViewSolById'
+import AddSolution from './component/AddSolution';
 
 function App() {
   return (
@@ -66,7 +68,9 @@ function App() {
           <Route path="/custchangepassword" exact component={CustomerChangePassword}></Route>
           <Route path="/viewallcustissue" exact component={ViewAllCustomerIssue}></Route>
           <Route  path="/reopn/:id" exact component={ReopenIssues}></Route>      
-          <Route path="/modifyopt" exact component ={ModifyOperator}></Route>    
+          <Route path="/modifyopt" exact component ={ModifyOperator}></Route>
+          <Route path="/ViewSolById/:id" exact component={ViewSolById}></Route> 
+          <Route path="/addSoln" exact component={AddSolution}></Route>
           <Router></Router>
         </Switch>
       </Router>

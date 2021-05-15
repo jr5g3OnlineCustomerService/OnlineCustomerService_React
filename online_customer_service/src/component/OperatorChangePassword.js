@@ -8,8 +8,8 @@ class OperatorChangePassword extends Component {
     constructor(props){
         super(props)
         this.state = {
-            operatorId : props.location.state.operator.operatorId,
-            password : props.location.state.operator.password
+            operatorId : sessionStorage.getItem('operatorId'),
+            password :  sessionStorage.getItem('password'),
         }
     }
     componentDidMount(){
@@ -30,7 +30,6 @@ class OperatorChangePassword extends Component {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
-       
         
         return(
             <div>
