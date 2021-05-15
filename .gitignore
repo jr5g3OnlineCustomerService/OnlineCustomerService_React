@@ -9,3 +9,7 @@ online_customer_service/package.json
 online_customer_service/package.json
 online_customer_service/package.json
 online_customer_service/package.json
+online_customer_service/src/App.js
+online_customer_service/src/component/ModifyOperator.js
+online_customer_service/src/store/actions/DepartmentAction.js
+online_customer_service/src/store/reducers/DepartmentReducer.js
