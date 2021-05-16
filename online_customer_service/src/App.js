@@ -34,13 +34,15 @@ import ModifyOperator from './component/ModifyOperator';
 import ViewSolById from './component/ViewSolById'
 import AddSolution from './component/AddSolution';
 import AdminHomePage from './component/AdminHomePage';
+import HomePage from './component/HomePage';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" exact component={OperatorLogin}></Route>
+          <Route path="/" exact component={HomePage}></Route>
+          <Route path="/oplogin" exact component={OperatorLogin}></Route>
           <Route path="/operatorReg" exact component={OperatorRegisteration}></Route>
           <Route path="/admin" exact component={AdminLogin}></Route>
           <Route path="/dept" exact component={AddDepartment}></Route>

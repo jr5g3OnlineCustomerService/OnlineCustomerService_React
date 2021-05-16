@@ -137,7 +137,8 @@ export const addSol1= (payload)=>{
 	let data={
 		solutionDescription:payload.solutionDescription,
                 issueId:payload.issueId,
-                operatorId:payload.operatorId
+                operatorId:payload.operatorId,
+                customerId:payload.customerId
 	}
 	return(dispatch)=>{
 		return axios.post(OperatorURL+"/addSolution",data)

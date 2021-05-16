@@ -10,7 +10,8 @@ class AddSolution extends Component{
         this.state={
             solutionDescription:'',
             issueId:props.location.state.issue.issueId,
-            operatorId:sessionStorage.getItem('operatorId')
+            operatorId:sessionStorage.getItem('operatorId'),
+            customerId:props.location.state.issue.customer.customerId
         }
         this.registration = this.registration.bind(this);
     }
@@ -19,11 +20,15 @@ class AddSolution extends Component{
            solutionDescription:this.state.solutionDescription,
 	   issueId:this.state.issueId,
        operatorId:this.state.operatorId,
+       customerId:this.state.customerId,
         }
         this.props.OperatorAction.addSol1(payload);
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
+        let adsol=this.props.adsol;
+        if(adsol!==undefined)
+        window.location.href="/viewallissues";
     return(
     <div>
         <h1>Add Solution Page</h1>
@@ -38,11 +43,13 @@ class AddSolution extends Component{
                 <label>operatorId</label>
                     <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}readOnly></input>
 
+                    <label>customerId</label>
+                    <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
 
             </div>
-            <button className="btn btn-sucess" onClick={this.registration}>Click</button>
+            <button className="btn btn- /sucess" onClick={this.registration}>Click</button>
         </form>
-        <Link to="/operatorhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back</button>
+        <Link to="/viewallissues">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back</button>
    </Link>  
     </div>
     );
