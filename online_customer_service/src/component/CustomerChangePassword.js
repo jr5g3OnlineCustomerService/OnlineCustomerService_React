@@ -8,7 +8,7 @@ class CustomerChangePassword extends Component {
     constructor(props){
         super(props)
         this.state = {
-            //customerId : props.location.state.operator.customerId,
+            customerId :sessionStorage.getItem('customerId'),
             password : '',
         }
         this.update = this.update.bind(this);
@@ -19,38 +19,29 @@ class CustomerChangePassword extends Component {
     update= (e) =>{
         e.preventDefault();
         let payload = {
-            customerId :this.customerId.value,
+            customerId :this.state.customerId,
             password : this.state.password,
         }
         this.props.CustomerAction.customerchangepassword(payload);
-        let search=window.location.search;
-        let params=new URLSearchParams(search);
-        let customerId=params.get('Id')
-        window.location.href="/Customerhome?Id="+customerId;
-       
+        window.location.href='/Customerhome';
     }
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
-        let search=window.location.search;
-        let params=new URLSearchParams(search);
-        let customerId=params.get('Id')
- 
-        
         return(
             <div>
 			    <h1>CUSTOMER CHANGE PASSWORD PAGE </h1>
 				 <form >
 				    <div className="form-group">
                     <label>Enter Customer Id</label>
-						<input type="text" name="customerId" className="form-control" value={customerId} ref={(input)=>{this.customerId=input}} readOnly></input><br></br>
+						<input type="text" name="customerId" className="form-control" value={this.state.customerId}readOnly></input><br></br>
 					    <label>Enter password</label>
 						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required"></input><br></br>
 					
                     </div>
 						<button className="btn btn-success" onClick={this.update}>update password</button>
-                        <Link to={`/Customerhome?Id=${customerId}`}> <button className="btn btn-default">Cancel</button></Link> 
+                        <Link to="/Customerhome"> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>
         );

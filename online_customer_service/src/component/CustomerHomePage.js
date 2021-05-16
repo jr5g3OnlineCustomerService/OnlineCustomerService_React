@@ -12,13 +12,13 @@ class CustomerHomePage extends Component{
         return(
             <div class="row">
             <div className="col-sm-8"><Link to='/addChat'>
-              <button className="btn btn-success" onClick={this.toAddChat} >Add Chat</button></Link>
+              <button className="btn btn-success">Add Chat</button></Link>
           </div>
-          <div className="col-sm-8">
-              <button className="btn btn-success" onClick={this.toChangePassword} >Change Password</button>
+          <div className="col-sm-8"><Link to='/custchangepassword'>
+              <button className="btn btn-success">Change Password</button></Link>
           </div>
-          <div className="col-sm-8">
-              <button className="btn btn-success" onClick={this.toViewAllIssue} >View All Issues</button>
+          <div className="col-sm-8"><Link to='/viewallcustissue'>
+              <button className="btn btn-success" >View Issues</button></Link>
           </div>
       </div>
         ); 

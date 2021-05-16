@@ -23,9 +23,8 @@ render()
                 <tr>
                     <th>OPERATOR CODE</th>
                     <th>FIRST NAME</th>
-                    
                     <th>CITY</th>
-                   
+                   <th>DEPARTMENT ID</th>
                     
 
                 </tr>
@@ -36,8 +35,8 @@ render()
                      <tr key={operator.operatorId}align="center">
                          <td>{operator.operatorId}</td>
                          <td>{operator.firstName}</td>
-                        
                          <td>{operator.city}</td>
+                         <td>{operator.department.departmentID}</td>
                          
 
 

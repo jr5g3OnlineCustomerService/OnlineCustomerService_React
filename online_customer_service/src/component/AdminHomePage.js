@@ -1,13 +1,7 @@
 import React,{ Component } from 'react';
 import {Link} from 'react-router-dom';
 class AdminHomePage extends Component{
-    constructor(props){
-        super(props)
-    }
     render(){
-        //let data = sessionStorage.getItem('customerId');
-        //debugger;
-        //alert(data);
         return(
             <div>
 		<h5><u>WELCOME ADMIN</u></h5>

@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ChatAction from '../store/actions/ChatAction';
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class AddChat extends Component{
     constructor(props){
@@ -46,6 +46,8 @@ class AddChat extends Component{
                 </div>
                 <button className="btn btn-sucess" onClick={this.add}>Click</button>
             </form>
+            <Link to="/Customerhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Customer Home Page</button>
+   </Link>
         </div>
         ); 
     }

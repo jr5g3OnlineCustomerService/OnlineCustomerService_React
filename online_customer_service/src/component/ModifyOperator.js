@@ -15,7 +15,7 @@ class ModifyOperator extends Component {
 	        email : props.location.state.operator.email,  
             city : props.location.state.operator.city,
             mobile : props.location.state.operator.mobile,   
-            departmentID: props.location.state.operator.departmentID
+            departmentID: props.location.state.operator.department.departmentID
     }
     }
     componentDidMount(){
@@ -61,7 +61,7 @@ class ModifyOperator extends Component {
 				        <label>Enter Mobile</label>
 						<input type="text" name="mobile" className="form-control" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
 					<label>Enter Department ID</label>
-						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  required="required"></input><br></br>	
+						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  required="required" readOnly></input><br></br>	
 
 
 					</div>
