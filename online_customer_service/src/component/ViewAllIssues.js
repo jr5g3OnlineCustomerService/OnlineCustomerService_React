@@ -13,7 +13,7 @@ componentDidMount(){
     //let log=this.props.login;
     let search=window.location.search;
         let params=new URLSearchParams(search);
-        let operatorId=sessionStorage.getItem('logindata')
+        let operatorId=sessionStorage.getItem('operatorId')
     this.props.IssueAction.getIssues(operatorId)
 }
 render()

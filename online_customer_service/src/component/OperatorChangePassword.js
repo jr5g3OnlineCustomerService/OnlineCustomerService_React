@@ -23,7 +23,7 @@ class OperatorChangePassword extends Component {
         }
         this.props.OperatorAction.changepassword(payload);
       
-        window.location.href="/alloperator";
+        window.location.href="/operatorhome";
        
     }
     onChange = (obj) => {
@@ -43,7 +43,7 @@ class OperatorChangePassword extends Component {
 					
                     </div>
 						<button className="btn btn-success" onClick={this.update}>update password</button>
-                        <Link to="/alloperator"> <button className="btn btn-default">Cancel</button></Link> 
+                        <Link to="/operatorhome"> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>
         );
