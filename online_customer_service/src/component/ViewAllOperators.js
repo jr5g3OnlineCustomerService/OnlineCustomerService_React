@@ -50,6 +50,7 @@ render()
                        
               </tbody>
         </table><br/>
+        <Link to="/AdminHome"> <button className="btn btn-default">Back</button></Link>
     </div>
 );
 }

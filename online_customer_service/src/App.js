@@ -33,6 +33,7 @@ import ReopenIssues from './component/ReopenIssues';
 import ModifyOperator from './component/ModifyOperator';
 import ViewSolById from './component/ViewSolById'
 import AddSolution from './component/AddSolution';
+import AdminHomePage from './component/AdminHomePage';
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
           <Route path="/modifyopt" exact component ={ModifyOperator}></Route>
           <Route path="/ViewSolById/:id" exact component={ViewSolById}></Route> 
           <Route path="/addSoln" exact component={AddSolution}></Route>
+          <Route path="/AdminHome" exact component={AdminHomePage}></Route>
           <Router></Router>
         </Switch>
       </Router>

@@ -14,8 +14,7 @@ class ModifyOperator extends Component {
  	        lastName : props.location.state.operator.lastName,
 	        email : props.location.state.operator.email,  
             city : props.location.state.operator.city,
-            mobile : props.location.state.operator.mobile, 
- 	        passowrd : props.location.state.operator.password,   
+            mobile : props.location.state.operator.mobile,   
             departmentID: props.location.state.operator.departmentID
     }
     }
@@ -30,8 +29,7 @@ class ModifyOperator extends Component {
  	    lastName : this.state.lastName,
 	    email : this.state.email,  
             city : this.state.city,
-            mobile : this.state.mobile, 
- 	    passowrd : this.state.password,   
+            mobile : this.state.mobile,    
             departmentID: this.state.departmentID,
         }
         this.props.DepartmentAction.modifyOpt(payload);
@@ -62,8 +60,6 @@ class ModifyOperator extends Component {
 						<input type="text" name="city" className="form-control" value={this.state.city} onChange={this.onChange}  required="required"></input><br></br>
 				        <label>Enter Mobile</label>
 						<input type="text" name="mobile" className="form-control" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
-					<label>Enter Password</label>
-						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required"></input><br></br>
 					<label>Enter Department ID</label>
 						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  required="required"></input><br></br>	
 
@@ -79,7 +75,7 @@ class ModifyOperator extends Component {
 }
 function mapStateToProps(state) {
     return {
-       editopt : state.DeprtemntReducer.editopt,
+       editopt : state.DepartmentReducer.editopt,
        optid:state.DepartmentReducer.optid,
        };
    }

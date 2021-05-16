@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as OperatorAction from '../store/actions/OperatorAction';
 import {bindActionCreators} from 'redux';
-
+import {Link} from 'react-router-dom';
 class ViewOperatorById extends Component{
    componentDidMount(){
        const {OperatorAction, match} = this.props;
@@ -28,7 +28,7 @@ class ViewOperatorById extends Component{
                           <th>EMAIL</th>
                           <th>MOBILE</th>
                           <th>CITY</th>
-                         
+                          
                           
       
                       </tr>
@@ -43,6 +43,7 @@ class ViewOperatorById extends Component{
                                <td>{op.email}</td>
                                <td>{op.mobile}</td>
                                <td>{op.city}</td>
+                            
                                
                            </tr>
                           
@@ -50,6 +51,7 @@ class ViewOperatorById extends Component{
                              
                     </tbody>
               </table><br/>
+              <Link to="/alloperator"> <button className="btn btn-default">Back</button></Link>
           </div>
       );
     }

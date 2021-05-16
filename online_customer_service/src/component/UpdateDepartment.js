@@ -44,8 +44,7 @@ class UpdateDepartment extends Component {
 					
                     </div>
 						<button className="btn btn-success" onClick={this.updateDept}>update item</button>
-                        <Link to="/alldept"> <button className="btn btn-default">Cancel</button></Link> 
-					</form> 
+					</form>
 				</div>
         );
 

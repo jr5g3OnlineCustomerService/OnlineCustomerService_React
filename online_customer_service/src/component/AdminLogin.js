@@ -20,7 +20,7 @@ class Adminlogin extends Component{
        document.getElementById("text2").innerHTML="Enter Password".fontcolor("red");
     }
     if(this.state.username==="admin" && this.state.password==="admin"){
-        window.location.href="/OperatorRegisteration";
+        window.location.href="/AdminHome";
     }
     }
     onChange=(user)=>this.setState({[user.target.name]:user.target.value});

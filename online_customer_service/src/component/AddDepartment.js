@@ -2,7 +2,7 @@ import React,{ Component,Redirect } from 'react';
 import {connect} from 'react-redux';
 import * as DepartmentAction from '../store/actions/DepartmentAction';
 import { bindActionCreators } from 'redux';
-
+import {Link} from 'react-router-dom';
 class AddDepartment extends Component{
     constructor(props){
         super(props)
@@ -33,6 +33,7 @@ render(){
             </div>
             <button className="btn btn-sucess" onClick={this.addDept}>AddItems</button>
         </form>
+        <Link to="/AdminHome"> <button className="btn btn-default">Back</button></Link>
     </div>
     );
 }
