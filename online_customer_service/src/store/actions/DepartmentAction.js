@@ -137,7 +137,7 @@ export const modifyOpt = (payload) =>{
         departmentID: payload.departmentID,
     }
     return (dispatch)=> {
-        return axios.post(DepartmentURL+"/updateOperator",data)
+        return axios.put(DepartmentURL+"/updateOperator",data)
         .then(Response => {
             console.log("api call");
             dispatch(editOptSuccess());
