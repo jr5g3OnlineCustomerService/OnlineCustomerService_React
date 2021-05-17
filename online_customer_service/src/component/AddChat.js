@@ -13,7 +13,7 @@ class AddChat extends Component{
             lastName : sessionStorage.getItem('lastName'),
             email :sessionStorage.getItem('email'),
             customerId:sessionStorage.getItem('customerId'),
-            errors :{},
+            errors :{}
         }
         this.add = this.add.bind(this);
     }
