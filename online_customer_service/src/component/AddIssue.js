@@ -12,7 +12,8 @@ class AddIssue extends Component{
             description:'',
             issueStatus:'',
             customerID:0,
-            operatorId:sessionStorage.getItem('operatorId')
+            operatorId:sessionStorage.getItem('operatorId'),
+            errors:{}
         }
         this.registration = this.registration.bind(this);
     }
@@ -87,12 +88,12 @@ class AddIssue extends Component{
                    
                    
                      <label>customerId</label>
-                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange}></input>
+                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange} readOnly></input>
                     <div>{this.state.errors.customerID}</div><br></br>
                     
                    
                     <label>operatorId</label>
-                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}></input>
+                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange} readOnly></input>
                     <div>{this.state.errors.operatorId}</div><br></br>
                     
 

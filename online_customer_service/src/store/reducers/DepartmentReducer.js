@@ -6,13 +6,14 @@ const initialState={
     editdept:undefined,
     editopt:undefined,
     optid:[],
+    addept:undefined
 }
 export default function DepartmentReducer(state=initialState,action){
     switch(action.type){
         case 'ADD_SUCCESS':
                 return{
                     ...state,
-                    dept:action.dept
+                    addept:action.addept
                 };
                 
         case 'GET_ALL_ITEMS_SUCCESS':

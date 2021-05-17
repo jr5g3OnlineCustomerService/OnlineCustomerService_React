@@ -9,42 +9,60 @@ class UpdateDepartment extends Component {
         super(props)
         this.state = {
             departmentID : props.location.state.dept.departmentID,
-            departmentName : props.location.state.dept.departmentName
+            departmentName : props.location.state.dept.departmentName,
+            errors:{}
         }
     }
+    validate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.departmentName)
+        {
+            formIsValid = false
+            errors['departmentName'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        return formIsValid
+   }
     componentDidMount(){
         console.log(this.props.location.state);
     }
     updateDept= (e) =>{
         e.preventDefault();
+        if(this.validate()){
         let payload = {
             departmentID : this.state.departmentID,
             departmentName : this.state.departmentName,
         }
         this.props.DepartmentAction.modifydept(payload);
-      
-        window.location.href="/alldept";
+    }
+        
        
     }
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
-       
+       let update=this.props.editdept;
+       if(update!==undefined){
+           alert("Department Updated");
+            window.location.href="/alldept";
+       }
         
         return(
-            <div>
-			    <h1>Update  Item </h1>
+            <div class="container">
+			    <h1>Update Department</h1>
 				 <form >
-				    <div className="form-group">
-                    <label>Enter Department Id</label>
-						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  readOnly></input><br></br>
-					    <label>Enter Department name</label>
-						<input type="text" name="departmentName" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required"></input><br></br>
-					
-                    </div>
-						<button className="btn btn-success" onClick={this.updateDept}>update item</button>
+				    
+                    <h5>Department Id</h5>
+						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
+					    <h5>Enter Department name</h5>
+						<input type="text" name="departmentName" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
+						<div>{this.state.errors.departmentName}</div><br></br>
+                        <button className="btn btn-success" onClick={this.updateDept}>Update</button>
+                        <Link to="/AdminHome"> <button className="btn btn-warning">Back</button></Link>
 					</form>
+                   
 				</div>
         );
 

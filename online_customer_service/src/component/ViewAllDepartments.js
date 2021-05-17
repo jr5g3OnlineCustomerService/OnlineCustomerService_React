@@ -15,14 +15,15 @@ render()
 {
     let stock=this.props.dept;
     return(
-        <div>
+        <div className="App bg_color">
         <h1>Department</h1>
-        <table className="table-bordered table-dark" align="center" width="50%" border="1">
+        <table className="table table-hover" align="center" width="50%" border="1">
             
             <thead>
                 <tr>
                     <th>DEPARTMENT CODE</th>
                     <th>DEPARTMENT NAME</th>
+                    <th colSpan={2}>ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,7 +40,7 @@ render()
                        
               </tbody>
         </table><br/>
-        <Link to="/AdminHome"> <button className="btn btn-default">Back</button></Link> 
+        <Link to="/AdminHome"> <button className="btn btn-warning">Back</button></Link> 
     </div>
 );
 }

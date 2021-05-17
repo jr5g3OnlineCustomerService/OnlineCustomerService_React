@@ -44,29 +44,27 @@ class ModifyOperator extends Component {
        
         
         return(
-            <div>
-			    <h1>Update  Item </h1>
+            <div class="container">
+			    <h1>Update Operator</h1>
 				 <form >
-				    <div className="form-group">
-                    <label>Enter Operator Id</label>
-						<input type="text" name="operatorId" className="form-control" value={this.state.operatorId} onChange={this.onChange}  readOnly></input><br></br>
-				       <label>Enter First name</label>
-						<input type="text" name="firstName" className="form-control" value={this.state.firstName} onChange={this.onChange}  required="required"></input><br></br>
-					<label>Enter Last name</label>
-						<input type="text" name="lastName" className="form-control" value={this.state.lastName} onChange={this.onChange}  required="required"></input><br></br>
-                		        <label>Enter Email</label>
-						<input type="text" name="email" className="form-control" value={this.state.email} onChange={this.onChange}  required="required"></input><br></br>
-			                <label>Enter City</label>
-						<input type="text" name="city" className="form-control" value={this.state.city} onChange={this.onChange}  required="required"></input><br></br>
-				        <label>Enter Mobile</label>
-						<input type="text" name="mobile" className="form-control" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
-					<label>Enter Department ID</label>
-						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  required="required" readOnly></input><br></br>	
+				    
+                    <h6>Enter Operator Id</h6>
+					<input type="text" name="operatorId" className="form-control btn_size" value={this.state.operatorId} onChange={this.onChange}  readOnly></input><br></br>
+				    <h6>Enter First name</h6>
+					<input type="text" name="firstName" className="form-control btn_size" value={this.state.firstName} onChange={this.onChange}  required="required"></input><br></br>
+					<h6>Enter Last name</h6>
+					<input type="text" name="lastName" className="form-control btn_size" value={this.state.lastName} onChange={this.onChange}  required="required"></input><br></br>
+                	<h6>Enter Email</h6>
+					<input type="text" name="email" className="form-control btn_size" value={this.state.email} onChange={this.onChange}  required="required"></input><br></br>
+			        <h6>Enter City</h6>
+					<input type="text" name="city" className="form-control btn_size" value={this.state.city} onChange={this.onChange}  required="required"></input><br></br>
+				    <h6>Enter Mobile</h6>
+					<input type="text" name="mobile" className="form-control btn_size" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
+					<h6>Enter Department ID</h6>
+					<input type="text" name="departmentID" className="form-control btn_size" value={this.state.departmentID} onChange={this.onChange}  required="required" readOnly></input><br></br>	
 
-
-					</div>
-						<button className="btn btn-success" onClick={this.updateOpt}>update item</button>
-                        <Link to="/alloperator"> <button className="btn btn-default">Cancel</button></Link> 
+						<button className="btn btn-success btn_top_pad" onClick={this.updateOpt}>Update</button>
+                        <Link to="/alloperator"> <button className="btn btn-danger btn_top_pad">Cancel</button></Link> 
 					</form> 
 				</div>
         );

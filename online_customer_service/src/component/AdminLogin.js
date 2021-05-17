@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from './Navbar';
 
 class Adminlogin extends Component{
     constructor(){
@@ -26,20 +27,35 @@ class Adminlogin extends Component{
     onChange=(user)=>this.setState({[user.target.name]:user.target.value});
     render(){
         return(
-            <body>
-            <form className="form-group">
-            <center>
-            <h1>Login Page</h1>
-            <label >Enter Username</label>
-            <input type="text" name="username"value={this.state.username}onChange={this.onChange}></input>
-            <b id="text1"></b><br/>
-            <label>Enter Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.onChange}></input>
-            <d id="text2"></d><br/>
-            <input type="button"onClick={this.saveUser}value="login"></input>
-            </center>
-            </form>
-            </body>
+            <div class="main">
+                <Navbar/>
+        <section class="signup">
+          
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Create account</h2>
+                        
+                        <div class="form-group">
+                        <input type="text" class="form-input" name="username"value={this.state.username}onChange={this.onChange} placeholder="Email"></input>
+                        </div>
+                        <div class="form-group">
+                        <input type="password" class="form-input" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password"></input>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                        <input type="button"onClick={this.saveUser}value="login" class="form-submit"></input>
+                        </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </section>
+
+    </div>
+
         );
     }
 }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as DepartmentAction from '../store/actions/DepartmentAction';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 class AddDepartment extends Component{
     constructor(props){
         super(props)
@@ -34,27 +35,30 @@ class AddDepartment extends Component{
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
 render(){
-    
+    let dept=this.props.addDept;
+    if(this.dept!==undefined){
+        alert("Department added Successfully");
+    }
     return(
-    <div>
-        <h1>AddDepartment Page</h1>
+        
+    <div class="App">
+        <Navbar/>
+        <h1>AddDepartment</h1>
         <form>
-            <div className="form-group">
-                <label>Departmentname</label>
-                <input type="text" name="departmentName" value={this.state.departmentName} className="form-control" onChange={this.onChange}></input>
+                <h4>Departmentname</h4>
+                <input type="text" name="departmentName" value={this.state.departmentName} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                 <div>{this.state.errors.departmentName}</div><br></br>
-                
-            </div>
-            <button className="btn btn-sucess" onClick={this.addDept}>AddItems</button>
+            <button className="btn btn-success" onClick={this.addDept}>AddItems</button>
+            <Link to="/AdminHome"> <button className="btn btn-warning">Back</button></Link>
         </form>
-        <Link to="/AdminHome"> <button className="btn btn-default">Back</button></Link>
+        
     </div>
     );
 }
 }
 function mapStateToProps(state){
     return{
-        dept: state.DepartmentReducer.dept
+        addept: state.DepartmentReducer.addept
     };
 }
 function mapDispatchToProps(dispatch){

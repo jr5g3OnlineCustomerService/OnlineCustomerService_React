@@ -1,9 +1,11 @@
 import React,{ Component } from 'react';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 class AdminHomePage extends Component{
     render(){
         return(
-            <div>
+            <div class="main">
+				 <Navbar/>
 		<h5><u>WELCOME ADMIN</u></h5>
 		<div class="row">
 			<div class="col-sm-4">

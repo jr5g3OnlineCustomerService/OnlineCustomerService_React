@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as CustomerAction from '../store/actions/CustomerAction';
 import {Redirect} from 'react-router-dom'; 
+import Navbar from './Navbar';
 
 class CustomerLogin extends Component {
   constructor(props){
@@ -54,19 +55,38 @@ class CustomerLogin extends Component {
         window.location.href="/Customerhome";
       }
   return(
-  <div class="row">
-              <div class="col-sm-4">
-                  <img src="login.png" width="100%"></img>
-              </div>
-              <div className="col-sm-8">
-            <h1>Customer Login Page</h1>
-           <input type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.onChange}></input>
-           <div>{this.state.errors.email}</div><br></br>
-           <input type="text" name="password" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
+    <div class="main">
+    <Navbar/>
+<section class="signup">
+
+<div class="container">
+    <div class="signup-content">
+        <form method="POST" id="signup-form" class="signup-form">
+            <h2 class="form-title">Login</h2>
+            
+            <div class="form-group">
+            <input type="text" name="email"  class="form-input" placeholder="Email" value={this.state.email} onChange={this.onChange}></input>
+            <div>{this.state.errors.email}</div><br></br>
+            </div>
+            <div class="form-group">
+            <input type="text" name="password"  class="form-input" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
            <div>{this.state.errors.password}</div><br></br>
-           <button className="btn btn-success" onClick={this.validation} style={{background:'#6C63FF'}}>Login</button>
-          </div>
-       </div>
+                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+            
+            
+            <div class="form-group">
+            <button className="form-submit" onClick={this.validation}>Login</button>
+            </div>
+        </form>
+        <p class="loginhere">
+            Do not have an account ? <a href="/addCust" class="loginhere-link">Register here</a>
+        </p>
+    </div>
+</div>
+</section>
+
+</div>
       );
     }
   }

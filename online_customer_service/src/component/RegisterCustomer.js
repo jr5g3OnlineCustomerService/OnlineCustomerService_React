@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as CustomerAction from '../store/actions/CustomerAction'
 import {Redirect} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class RegisterCustomer extends Component{
     constructor(props){
@@ -71,37 +72,54 @@ class RegisterCustomer extends Component{
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         return(
-        <div>
-            <h1>Customer Registration Page</h1>
-            <form>
-                <div className="form-group">
-                    <label>firstName</label>
-                    <input type="text" name="firstName" value={this.state.firstName} className="form-control" onChange={this.onChange}></input>
+            <div class="main">
+            <Navbar/>
+    <section class="signup">
+      
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form">
+                    <h2 class="form-title">Create account</h2>
+                    
+                    <div class="form-group">
+                    <input type="text" name="firstName" class="form-input" value={this.state.firstName}  onChange={this.onChange} placeholder="First Name"></input>
                     <div>{this.state.errors.firstName}</div><br></br>
 
-                    <label>lastName</label>
-                    <input type="text" name="lastName" value={this.state.lastName} className="form-control" onChange={this.onChange}></input>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="lastName" class="form-input" value={this.state.lastName}  onChange={this.onChange} placeholder="Last Name"></input>
                     <div>{this.state.errors.lastName}</div><br></br>
-
-                    <label>email</label>
-                    <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.onChange}></input>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="email" class="form-input" value={this.state.email}  onChange={this.onChange} placeholder="Email"></input>
                     <div>{this.state.errors.email}</div><br></br>
-
-                    <label>mobile</label>
-                    <input type="text" name="mobile" value={this.state.mobile} className="form-control" onChange={this.onChange}></input>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="mobile" class="form-input" value={this.state.mobile}  onChange={this.onChange} placeholder="Mobile"></input>
                     <div>{this.state.errors.mobile}</div><br></br>
- 
-                    <label>city</label>
-                    <input type="text" name="city" value={this.state.city} className="form-control" onChange={this.onChange}></input>
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="city" class="form-input" value={this.state.city}  onChange={this.onChange} placeholder="City"></input>
                     <div>{this.state.errors.city}</div><br></br>
-
-                    <label>Password</label>
-                    <input type="text" name="password" value={this.state.password} className="form-control" onChange={this.onChange}></input>
+                    </div>
+                    <div class="form-group">
+                    <input type="password" name="password" class="form-input" value={this.state.password} onChange={this.onChange} placeholder="Password"></input>
                     <div>{this.state.errors.password}</div><br></br>
-                </div>
-                <button className="btn btn-sucess" onClick={this.custRegistration}>Click</button>
-            </form>
+                    </div>
+                    
+                    <div class="form-group">
+                    <button className="form-submit" onClick={this.custRegistration}>Register</button>
+                    </div>
+                </form>
+                <p class="loginhere">
+                         Already have an account ? <a href="/customer" class="loginhere-link">Login here</a>
+                    </p>
+            </div>
         </div>
+    </section>
+
+</div>
+
         ); 
     }
 }
