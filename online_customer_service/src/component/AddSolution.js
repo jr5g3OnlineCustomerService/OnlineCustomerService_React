@@ -46,6 +46,8 @@ class AddSolution extends Component{
         return formIsValid
    }
      registration =(reg)=>{
+        reg.preventDefault();
+        if(this.validate()){
         let payload = {
            solutionDescription:this.state.solutionDescription,
 	   issueId:this.state.issueId,
@@ -54,6 +56,7 @@ class AddSolution extends Component{
         }
         this.props.OperatorAction.addSol1(payload);
     }
+}
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         let adsol=this.props.adsol;
@@ -79,7 +82,7 @@ class AddSolution extends Component{
                     <label>customerId</label>
                     <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
                     <div>{this.state.errors.customerId}</div><br></br>
-                    
+
 
             </div>
             <button className="btn btn- /sucess" onClick={this.registration}>Click</button>

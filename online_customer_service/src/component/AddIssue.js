@@ -16,7 +16,44 @@ class AddIssue extends Component{
         }
         this.registration = this.registration.bind(this);
     }
+    validate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.issueType)
+        {
+            formIsValid = false
+            errors['issueType'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.description)
+        {
+            formIsValid = false
+            errors['description'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.issueStatus)
+        {
+            formIsValid = false
+            errors['issueStatus'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.customerID)
+        {
+            formIsValid = false
+            errors['customerID'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.operatorId)
+        {
+            formIsValid = false
+            errors['operatorId'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        return formIsValid
+   }
     registration = (reg)=>{
+        reg.preventDefault();
+        if(this.validate()){
         let payload = {
             issueType:  this.state.issueType,
             description: this.state.description,
@@ -26,6 +63,7 @@ class AddIssue extends Component{
         }
         this.props.IssueAction.addIssue(payload);
     }
+}
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         return(
@@ -35,14 +73,29 @@ class AddIssue extends Component{
                 <div className="form-group">
                     <label>issueType</label>
                     <input type="text" name="issueType" value={this.state.issueType} className="form-control" onChange={this.onChange}></input>
-		            <label>description</label>
+                    <div>{this.state.errors.issueType}</div><br></br>
+		            
+                    
+                    <label>description</label>
                     <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.onChange}></input>
+                    <div>{this.state.errors.description}</div><br></br>
+                   
+                   
                     <label>issueStatus</label>
                     <input type="text" name="issueStatus" value={this.state.issueStatus} className="form-control" onChange={this.onChange}></input>
+                    <div>{this.state.errors.issueStatus}</div><br></br>
+                   
+                   
                      <label>customerId</label>
                     <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange}></input>
+                    <div>{this.state.errors.customerID}</div><br></br>
+                    
+                   
                     <label>operatorId</label>
                     <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}></input>
+                    <div>{this.state.errors.operatorId}</div><br></br>
+                    
+
                 </div>
                 <button className="btn btn-sucess" onClick={this.registration}>Click</button><br/>
 <Link to="/operatorhome">
