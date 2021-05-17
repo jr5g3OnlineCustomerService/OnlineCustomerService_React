@@ -11,10 +11,8 @@ class ViewAllCustomerIssue extends Component{
     }
 componentDidMount(){
     //let log=this.props.login;
-    let search=window.location.search;
-        let params=new URLSearchParams(search);
-        let customerId=params.get('Id')
-    this.props.CustomerAction.getAllIssues(customerId)
+    
+    this.props.CustomerAction.getAllIssues(sessionStorage.getItem('customerId'))
 }
 render()
 {

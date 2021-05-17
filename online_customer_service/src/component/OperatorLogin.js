@@ -31,6 +31,7 @@ class OperatorLogin extends Component{
          debugger;
          sessionStorage.setItem('operatorId',login.operatorId);
          sessionStorage.setItem('password',login.password);
+         sessionStorage.setItem('opfirstName',login.firstName);
          // window.location.href="/viewallissues?Id="+login.operatorId;
          window.location.href="/operatorhome";
         }

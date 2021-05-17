@@ -13,23 +13,51 @@ render(){
     debugger
     //alert(data);
     return(
-        <div class="row">
-            <div className="col-sm-8">
-              <Link to="/viewChatissues"> <button className="btn btn-default">View Chat Issues</button></Link> 
-            </div>
-
-             <div className="col-sm-8">
-              <Link to="/addIssue"> <button className="btn btn-default">Add Customer Isues</button></Link> 
-            </div>
-
-              <div className="col-sm-8">
-              <Link to="/viewallissues"> <button className="btn btn-default">View All Issues</button></Link> 
-            </div>
-
-            <div className="col-sm-8">
-              <Link to="/opchangepassword"> <button className="btn btn-default">Change Password</button></Link> 
-            </div>
-        </div>
+        <div>
+		<h5>WELCOME {sessionStorage.getItem('opfirstName')}</h5>
+		<div class="row">
+			<div class="col-sm-3">
+			    <div class="card img" style={{width: "100%" ,height: "150px"}}>
+			        <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+			        <div class="card-body text-center">
+			            <h5 class="card-title">View Chat Issues</h5>
+			            <p class="card-text"></p>
+			            <Link to="/viewChatissues"> <button className="btn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link> 
+			        </div>
+			    </div>
+			</div>
+			  <div class="col-sm-3">
+			    <div class="card img" style={{width: "100%" ,height: "150px"}}>
+			       <i class="fa fa-search fa-lg" aria-hidden="true" ></i>
+			        <div class="card-body text-center">
+			            <h5 class="card-title">Add Customer Isues</h5>
+			            <p class="card-text"></p>
+			            <Link to="/addIssue"> <button className="btn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
+			        </div>
+			    </div>
+			</div>
+			<div class="col-sm-3">
+			    <div class="card img" style={{width: "100%" ,height: "150px"}}>
+			        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+			        <div class="card-body text-center">
+			            <h5 class="card-title">View All Issues</h5>
+			            <p class="card-text"></p>
+			            <Link to="/viewallissues"> <button className="bbtn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
+			        </div>
+			    </div>
+			</div>
+            <div class="col-sm-3">
+			    <div class="card img" style={{width: "100%" ,height: "150px"}}>
+			        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+			        <div class="card-body text-center">
+			            <h5 class="card-title">Change Password</h5>
+			            <p class="card-text"></p>
+			            <Link to="/opchangepassword"> <button className="btn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
+			        </div>
+			    </div>
+			</div>
+			</div>
+		</div>
 
     );
 }

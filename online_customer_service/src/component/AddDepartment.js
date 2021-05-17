@@ -7,20 +7,34 @@ class AddDepartment extends Component{
     constructor(props){
         super(props)
         this.state={
-            departmentName:''
+            departmentName:'',
+            errors:{}
         }
         this.addDept=this.addDept.bind(this);
     }
-    addDept=(add)=>{
+    validate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.departmentName)
+        {
+            formIsValid = false
+            errors['departmentName'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        return formIsValid
+   }
+    addDept=(add)=>{    
+        add.preventDefault();
+        if(this.validate()){
         let payload={
             departmentName:this.state.departmentName  
         }
         this.props.DepartmentAction.addDept1(payload);
+        }
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
 render(){
-    if(this.props.addItems==='added')
-    return <Redirect to="/"></Redirect>
+    
     return(
     <div>
         <h1>AddDepartment Page</h1>
@@ -28,7 +42,7 @@ render(){
             <div className="form-group">
                 <label>Departmentname</label>
                 <input type="text" name="departmentName" value={this.state.departmentName} className="form-control" onChange={this.onChange}></input>
-
+                <div>{this.state.errors.departmentName}</div><br></br>
                 
             </div>
             <button className="btn btn-sucess" onClick={this.addDept}>AddItems</button>
