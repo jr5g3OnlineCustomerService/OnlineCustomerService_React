@@ -21,20 +21,21 @@ class ViewCustomer extends Component{
             <h1>View Customer Page</h1>
             <form>
                 <div className="form-group">
-                    <label>customer_Id</label>
+                <label>customer_Id</label>
                     <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
-
+                    <Link to={`/viewcustByid/${this.state.customerId}`}><button className="btn btn-danger">ViewById</button></Link><br></br>
+                    <br></br>
                     <label>firstName</label>
                     <input type="text" name="firstName" value={this.state.firstName} className="form-control" onChange={this.onChange}></input>
-                
+                    <Link to={`/viewcustByname/${this.state.firstName}`}><button className="btn btn-danger">ViewByName</button></Link><br></br>
+                    <br></br>
                     <label>email</label>
                     <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.onChange}></input>
+                    <Link to={`/viewcustByemail/${this.state.email}`}><button className="btn btn-danger">ViewByEmail</button></Link><br></br>
                     
                   
                 </div>
-                    <Link to={`/viewcustByid/${this.state.customerId}`}><button className="btn btn-danger">ViewById</button></Link>
-                    <Link to={`/viewcustByname/${this.state.firstName}`}><button className="btn btn-danger">ViewByName</button></Link>
-                    <Link to={`/viewcustByemail/${this.state.email}`}><button className="btn btn-danger">ViewByEmail</button></Link>
+                    
              </form>
         </div>
         ); 
