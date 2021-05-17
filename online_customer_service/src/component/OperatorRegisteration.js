@@ -53,8 +53,11 @@ class OperatorRegisteration extends Component{
                     <label>departmentID</label>
                     <input type="text" name="departmentID" value={this.state.departmentID} className="form-control" onChange={this.onChange}></input>
                 </div>
-                <button className="btn btn-sucess" onClick={this.registration}>Click</button>
+                <button className="registerbtn" onClick={this.registration}>Click</button>
             </form>
+            <div class="container signin">
+<p>Already have an account? <a href="/oplogin">Sign in</a>.</p>
+</div>
         </div>
         ); 
     }
