@@ -79,6 +79,7 @@ class AddSolution extends Component{
                     <label>customerId</label>
                     <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
                     <div>{this.state.errors.customerId}</div><br></br>
+                    
 
             </div>
             <button className="btn btn- /sucess" onClick={this.registration}>Click</button>
