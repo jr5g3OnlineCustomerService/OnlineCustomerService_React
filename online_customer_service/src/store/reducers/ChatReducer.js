@@ -8,7 +8,7 @@ export default function ChatReducer(state=initialState,action){
         case 'CHAT_ADDED_SUCCESS':
             return{
                 ...state,
-                addchat : action.addchat
+                addchat : 'added'
             
             };
            case 'GET_ALL_CHATS_SUCCESS':

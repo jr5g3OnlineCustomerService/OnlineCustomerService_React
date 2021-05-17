@@ -1,9 +1,8 @@
-
-
 import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import * as CustomerAction from '../store/actions/CustomerAction';
 import {bindActionCreators} from 'redux';
+import {Link} from 'react-router-dom';
 
 class ViewAllSolutions extends Component{
   /* constructor(props){
@@ -40,6 +39,8 @@ render()
                        
               </tbody>
         </table><br/>
+        <Link to="/viewallcustissue">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Customer Home Page</button>
+   </Link>
     </div>
 );
 }

@@ -16,6 +16,7 @@ export const addChat=(payload)=>{
 	firstName:payload.firstName,
 	lastName:payload.lastName,
 	email:payload.email,
+    customerId:payload.customerId,
  }
     return(dispatch)=>{
         return axios.post("http://localhost:8889/customer/addComplaints",data)
