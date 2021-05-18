@@ -15,14 +15,58 @@ class ModifyOperator extends Component {
 	        email : props.location.state.operator.email,  
             city : props.location.state.operator.city,
             mobile : props.location.state.operator.mobile,   
-            departmentID: props.location.state.operator.department.departmentID
+            departmentID: props.location.state.operator.department.departmentID,
+            errors:{}
     }
     }
     componentDidMount(){
         console.log(this.props.location.state);
     }
+    validate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.operatorId)
+        {
+            formIsValid = false
+            errors['operatorId'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.firstName)
+        {
+            formIsValid = false
+            errors['firstName'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.lastName)
+        {
+            formIsValid = false
+            errors['lastName'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.departmentID)
+        {
+            formIsValid = false
+            errors['departmentID'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.email)
+        {
+            formIsValid = false
+            errors['email'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        if(!this.state.city)
+        {
+            formIsValid = false
+            errors['city'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        return formIsValid
+   }
+ 
     updateOpt= (e) =>{
         e.preventDefault();
+        if(this.validate()){ 
         let payload = {
             operatorId : this.state.operatorId,
             firstName : this.state.firstName,
@@ -30,12 +74,12 @@ class ModifyOperator extends Component {
 	    email : this.state.email,  
             city : this.state.city,
             mobile : this.state.mobile,    
-            departmentID: this.state.departmentID,
+            departmentID: this.state.departmentID
         }
         this.props.DepartmentAction.modifyOpt(payload);
       
         window.location.href="/alloperator";
-       
+    } 
     }
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
@@ -50,19 +94,38 @@ class ModifyOperator extends Component {
 				    
                     <h6>Enter Operator Id</h6>
 					<input type="text" name="operatorId" className="form-control btn_size" value={this.state.operatorId} onChange={this.onChange}  readOnly></input><br></br>
-				    <h6>Enter First name</h6>
-					<input type="text" name="firstName" className="form-control btn_size" value={this.state.firstName} onChange={this.onChange}  required="required"></input><br></br>
-					<h6>Enter Last name</h6>
-					<input type="text" name="lastName" className="form-control btn_size" value={this.state.lastName} onChange={this.onChange}  required="required"></input><br></br>
-                	<h6>Enter Email</h6>
-					<input type="text" name="email" className="form-control btn_size" value={this.state.email} onChange={this.onChange}  required="required"></input><br></br>
-			        <h6>Enter City</h6>
-					<input type="text" name="city" className="form-control btn_size" value={this.state.city} onChange={this.onChange}  required="required"></input><br></br>
-				    <h6>Enter Mobile</h6>
-					<input type="text" name="mobile" className="form-control btn_size" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
-					<h6>Enter Department ID</h6>
-					<input type="text" name="departmentID" className="form-control btn_size" value={this.state.departmentID} onChange={this.onChange}  required="required" readOnly></input><br></br>	
+                    <div>{this.state.errors.operatorId}</div><br></br>
+				  
 
+                    <h6>Enter First name</h6>
+					<input type="text" name="firstName" className="form-control btn_size" value={this.state.firstName} onChange={this.onChange}  required="required"></input><br></br>
+                    <div>{this.state.errors.firstName}</div><br></br>
+					
+                    
+                    <h6>Enter Last name</h6>
+					<input type="text" name="lastName" className="form-control btn_size" value={this.state.lastName} onChange={this.onChange}  required="required"></input><br></br>
+                    <div>{this.state.errors.lastName}</div><br></br>
+                	
+                    
+                    <h6>Enter Email</h6>
+					<input type="text" name="email" className="form-control btn_size" value={this.state.email} onChange={this.onChange}  required="required"></input><br></br>
+                    <div>{this.state.errors.email}</div><br></br>
+			        
+                    
+                    <h6>Enter City</h6>
+					<input type="text" name="city" className="form-control btn_size" value={this.state.city} onChange={this.onChange}  required="required"></input><br></br>
+                    <div>{this.state.errors.city}</div><br></br>
+				
+                   
+                    <h6>Enter Mobile</h6>
+					<input type="text" name="mobile" className="form-control btn_size" value={this.state.mobile} onChange={this.onChange}  required="required"></input><br></br>
+                    <div>{this.state.errors.mobile}</div><br></br>
+				
+                
+                	<h6>Enter Department ID</h6>
+					<input type="text" name="departmentID" className="form-control btn_size" value={this.state.departmentID} onChange={this.onChange}  required="required" readOnly></input><br></br>	
+                    <div>{this.state.errors.departmentID}</div><br></br>
+                   
 						<button className="btn btn-success btn_top_pad" onClick={this.updateOpt}>Update</button>
                         <Link to="/alloperator"> <button className="btn btn-danger btn_top_pad">Cancel</button></Link> 
 					</form> 
