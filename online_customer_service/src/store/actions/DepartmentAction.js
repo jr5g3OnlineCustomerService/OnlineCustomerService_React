@@ -133,7 +133,7 @@ export const modifyOpt = (payload) =>{
         email : payload.email,  
         city : payload.city,
         mobile : payload.mobile, 
-        passowrd : payload.password,   
+        password : payload.password,   
         departmentID: payload.departmentID,
     }
     return (dispatch)=> {

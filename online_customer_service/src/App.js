@@ -36,7 +36,7 @@ import AddSolution from './component/AddSolution';
 import AdminHomePage from './component/AdminHomePage';
 import HomePage from './component/HomePage';
 import Navbar from './component/Navbar';
-import ViewAllSolutions from './component/ViewAllSolutions';
+import ViewSolutionByIssueId from './component/ViewSolutionByIssueId';
 function App() {
   return (
     <div className="App">
@@ -77,7 +77,7 @@ function App() {
           <Route path="/addSoln" exact component={AddSolution}></Route>
           <Route path="/AdminHome" exact component={AdminHomePage}></Route>
           <Route path="/nav" exact component={Navbar}></Route>
-          <Route path="/viewallsolns/:id" exact component={ViewAllSolutions}></Route>
+          <Route path="/viewsolns/:id" exact component={ViewSolutionByIssueId}></Route>
           <Router></Router>
         </Switch>
       </Router>

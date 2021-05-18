@@ -42,7 +42,7 @@ render()
 			             <td>{issue.description}</td>
 			             <td>{issue.issueStatus}</td>
                          <td><Link to={`/reopn/${issue.issueId}`}><button className="btn btn-danger">Open</button></Link></td>
-                         <td><Link to={`/viewallsolns/${issue.issueId}`}><button className="btn btn-danger">View Solution</button></Link></td>
+                         <td><Link to={`/viewsolns/${issue.issueId}`}><button className="btn btn-danger">View Solution</button></Link></td>
 
                      </tr>
                     

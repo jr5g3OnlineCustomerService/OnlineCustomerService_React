@@ -89,12 +89,12 @@ export const getSolutionSuccess = (sol) => {
         type : 'GET_SOLUTIONALL_SUCCESS',sol
     }
 };
-export const getSolutions=()=>{
+export const getSolutionByIssueId=(code)=>{
     console.log("Inside getSolutions");
     return(dispatch)=>{
-        return axios.get("http://localhost:8889/customer/allSolutions")
+        return axios.get("http://localhost:8889/customer/Solutionsbyissueid/"+code)
         .then(Response=>{
-            localStorage.setItem("issue",JSON.stringify(Response.data));
+            localStorage.setItem("sol",JSON.stringify(Response.data));
             console.log("api call");
             dispatch(getSolutionSuccess(Response.data));
         })

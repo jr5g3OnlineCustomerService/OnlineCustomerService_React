@@ -14,7 +14,8 @@ class ModifyOperator extends Component {
  	        lastName : props.location.state.operator.lastName,
 	        email : props.location.state.operator.email,  
             city : props.location.state.operator.city,
-            mobile : props.location.state.operator.mobile,   
+            mobile : props.location.state.operator.mobile, 
+            password:props.location.state.operator.password,   
             departmentID: props.location.state.operator.department.departmentID,
             errors:{}
     }
@@ -73,7 +74,8 @@ class ModifyOperator extends Component {
  	    lastName : this.state.lastName,
 	    email : this.state.email,  
             city : this.state.city,
-            mobile : this.state.mobile,    
+            mobile : this.state.mobile,
+            password:this.state.password,    
             departmentID: this.state.departmentID
         }
         this.props.DepartmentAction.modifyOpt(payload);

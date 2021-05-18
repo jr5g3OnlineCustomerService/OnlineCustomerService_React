@@ -4,16 +4,19 @@ import * as CustomerAction from '../store/actions/CustomerAction';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 
-class ViewAllSolutions extends Component{
+class ViewSolutionByIssueId extends Component{
   /* constructor(props){
         super(props)
     }*/
 componentDidMount(){
-    this.props.CustomerAction.getSolutions(sessionStorage.getItem('customerId'))
+    const {CustomerAction, match} = this.props;
+       CustomerAction.getSolutionByIssueId(match.params.id);
+    //this.props.CustomerAction.getSolutionByIssueId(sessionStorage.getItem('customerId'))
 }
 render()
 {
-    let stock=this.props.sol;
+    let sol=this.props.sol;
+    //alert(sol);
     return(
         <div>
         <h1>Solution</h1>
@@ -29,7 +32,7 @@ render()
             </thead>
             <tbody>
                 {
-                    stock.map(sol=>
+                
                      <tr key={sol.solutionId}align="center">
                          <td>{sol.solutionId}</td>
                          <td>{sol.solutionDescription}</td>
@@ -37,7 +40,7 @@ render()
                          <td>{sol.issue.issueId}</td>
                      </tr>
                     
-                      )}
+                    }
                        
               </tbody>
         </table><br/>
@@ -58,6 +61,6 @@ function mapDispatchToProps(dispatch){
     };
 
 }
-export default connect(mapStateToProps,mapDispatchToProps)(ViewAllSolutions);
+export default connect(mapStateToProps,mapDispatchToProps)(ViewSolutionByIssueId);
 
 

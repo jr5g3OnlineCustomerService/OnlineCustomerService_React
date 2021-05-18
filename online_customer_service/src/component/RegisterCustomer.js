@@ -83,28 +83,28 @@ class RegisterCustomer extends Component{
                     
                     <div class="form-group">
                     <input type="text" name="firstName" class="form-input" value={this.state.firstName}  onChange={this.onChange} placeholder="First Name"></input>
-                    <div>{this.state.errors.firstName}</div><br></br>
+                    <div class="red_color">{this.state.errors.firstName}</div><br></br>
 
                     </div>
                     <div class="form-group">
                     <input type="text" name="lastName" class="form-input" value={this.state.lastName}  onChange={this.onChange} placeholder="Last Name"></input>
-                    <div>{this.state.errors.lastName}</div><br></br>
+                    <div class="red_color">{this.state.errors.lastName}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="email" class="form-input" value={this.state.email}  onChange={this.onChange} placeholder="Email"></input>
-                    <div>{this.state.errors.email}</div><br></br>
+                    <div class="red_color">{this.state.errors.email}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="mobile" class="form-input" value={this.state.mobile}  onChange={this.onChange} placeholder="Mobile"></input>
-                    <div>{this.state.errors.mobile}</div><br></br>
+                    <div class="red_color">{this.state.errors.mobile}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="city" class="form-input" value={this.state.city}  onChange={this.onChange} placeholder="City"></input>
-                    <div>{this.state.errors.city}</div><br></br>
+                    <div class="red_color">{this.state.errors.city}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="password" name="password" class="form-input" value={this.state.password} onChange={this.onChange} placeholder="Password"></input>
-                    <div>{this.state.errors.password}</div><br></br>
+                    <div class="red_color">{this.state.errors.password}</div><br></br>
                     </div>
                     
                     <div class="form-group">
