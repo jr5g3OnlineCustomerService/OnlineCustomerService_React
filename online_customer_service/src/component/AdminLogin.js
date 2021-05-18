@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import HomeNavBar from './HomeNavBar';
 
 class Adminlogin extends Component{
     constructor(){
@@ -28,7 +28,7 @@ class Adminlogin extends Component{
     render(){
         return(
             <div class="main">
-                <Navbar/>
+                <HomeNavBar/>
         <section class="signup">
           
             <div class="container">
@@ -37,10 +37,10 @@ class Adminlogin extends Component{
                         <h2 class="form-title">Create account</h2>
                         
                         <div class="form-group">
-                        <input type="text" class="form-input" name="username"value={this.state.username}onChange={this.onChange} placeholder="Email"></input>
+                        <input type="text" class="form-input" name="username"value={this.state.username}onChange={this.onChange} placeholder="Email" required></input>
                         </div>
                         <div class="form-group">
-                        <input type="password" class="form-input" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password"></input>
+                        <input type="password" class="form-input" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" required></input>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         

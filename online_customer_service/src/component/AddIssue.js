@@ -90,7 +90,7 @@ class AddIssue extends Component{
                    
                    
                      <label>CustomerId </label>
-                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange} readOnly style={{width:"200px",display:"inline-block"}}></input>
+                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange}  style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.customerID}</div><br></br>
                     
                    

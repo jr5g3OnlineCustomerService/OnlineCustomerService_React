@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as OperatorAction from '../store/actions/OperatorAction'
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class AddSolution extends Component{
     constructor(props){
@@ -60,32 +61,36 @@ class AddSolution extends Component{
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         let adsol=this.props.adsol;
-        if(adsol!==undefined)
-        window.location.href="/viewallissues";
+        if(adsol!==undefined){
+            alert("Solution Added");
+            window.location.href="/viewallissues";
+        }
+        
     return(
-    <div>
-        <h1>Add Solution Page</h1>
+    <div class="App">
+        <Navbar/>
+        <h1>Add Solution</h1>
         <form>
-            <div className="form-group">
-                <label> solutionDescription</label>
-                <input type="text" name="solutionDescription" value={this.state.solutionDescription} className="form-control" onChange={this.onChange}></input>
+           
+                <label> SolutionDescription</label>
+                <input type="text" name="solutionDescription" value={this.state.solutionDescription} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                 <div>{this.state.errors.solutionDescription}</div><br></br>
 
-                 <label>issueId</label>
-                    <input type="text" name="issueId" value={this.state.issueId} className="form-control" onChange={this.onChange}readOnly></input>
+                 <label>IssueId</label>
+                    <input type="text" name="issueId" value={this.state.issueId} className="form-control" onChange={this.onChange}readOnly style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.issueId}</div><br></br>
 
-                <label>operatorId</label>
-                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}readOnly></input>
+                <label>OperatorId</label>
+                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}readOnly style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.operatorId}</div><br></br>
 
-                    <label>customerId</label>
-                    <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
+                    <label>CustomerId</label>
+                    <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
                     <div>{this.state.errors.customerId}</div><br></br>
 
 
-            </div>
-            <button className="btn btn- /sucess" onClick={this.registration}>Click</button>
+           
+            <button className="btn btn-success" onClick={this.registration}>Submit</button>
         </form>
         <Link to="/viewallissues">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back</button>
    </Link>  

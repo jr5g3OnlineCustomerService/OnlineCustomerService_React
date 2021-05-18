@@ -85,7 +85,10 @@ class ModifyOperator extends Component {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
-       
+       let opt=this.props.editopt;
+       if(opt!==undefined){
+           alert("Operator Updated");
+       }
         
         return(
             <div class="container">

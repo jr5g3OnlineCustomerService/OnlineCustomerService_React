@@ -9,7 +9,7 @@ class ViewAllSolutions extends Component{
         super(props)
     }*/
 componentDidMount(){
-    this.props.CustomerAction.getSolutions()
+    this.props.CustomerAction.getSolutions(sessionStorage.getItem('customerId'))
 }
 render()
 {
@@ -24,6 +24,7 @@ render()
                     <th>SOLUTION CODE</th>
 		    <th>SOLUTION DESCRIPTION</th>
 		    <th>SOLUTION DATE</th>
+            <th>ISSUE ID</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@ render()
                          <td>{sol.solutionId}</td>
                          <td>{sol.solutionDescription}</td>
                          <td>{sol.solutionDate}</td>
+                         <td>{sol.issue.issueId}</td>
                      </tr>
                     
                       )}

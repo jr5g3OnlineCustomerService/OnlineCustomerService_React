@@ -175,7 +175,7 @@ body {
   -ms-transform: translate(-50%, -50%); }
 
 .signup-content {
-  background: #fff;
+  background:lightblue;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -356,3 +356,6 @@ tr{
   background-color:  #b3ffff;
 }
 /*# sourceMappingURL=style.css.map */
+.red_color{
+  color: red;
+}

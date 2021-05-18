@@ -22,7 +22,7 @@ export const loginValidate=(payload) =>{
             dispatch(loginSuccess(Response.data));
         })
         .catch(Error=>{
-            console.log("error");
+            alert("Invalid credentials");
             throw(Error);
         });
     };
@@ -55,7 +55,7 @@ export const registerUser=(payload)=>{
             dispatch(registrationSucess());
         })
         .catch(Error=>{
-            console.log("error");
+            alert("Department Not found");
             throw(Error);
         });
     };

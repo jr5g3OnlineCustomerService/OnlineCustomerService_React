@@ -17,7 +17,7 @@ render()
     return(
         <div>
         <h1>Chat</h1>
-        <table className="table-bordered table-dark" align="center" width="50%" border="1">
+        <table className="table table-hover" align="center" width="50%" border="1">
             
             <thead>
                 <tr>
@@ -27,6 +27,7 @@ render()
 		            <th>FIRST NAME</th>
 		            <th>LAST NAME</th>
                     <th>EMAIL</th>
+                    <th>CUSTOMER ID</th>
                     
                 </tr>
             </thead>
@@ -40,6 +41,7 @@ render()
                          <td>{ch.firstName}</td>
                          <td>{ch.lastName}</td>
                          <td>{ch.email}</td>
+                         <td>{ch.customer.customerId}</td>
                         
 
                        

@@ -51,7 +51,7 @@ class ViewOperatorById extends Component{
                              
                     </tbody>
               </table><br/>
-              <Link to="/alloperator"> <button className="btn btn-default">Back</button></Link>
+              <Link to="/alloperator"> <button className="btn btn-warning">Back</button></Link>
           </div>
       );
     }

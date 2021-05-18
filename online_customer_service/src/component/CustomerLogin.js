@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as CustomerAction from '../store/actions/CustomerAction';
 import {Redirect} from 'react-router-dom'; 
-import Navbar from './Navbar';
+import HomeNavBar from './HomeNavBar';
 
 class CustomerLogin extends Component {
   constructor(props){
@@ -56,7 +56,7 @@ class CustomerLogin extends Component {
       }
   return(
     <div class="main">
-    <Navbar/>
+    <HomeNavBar/>
 <section class="signup">
 
 <div class="container">
@@ -66,11 +66,11 @@ class CustomerLogin extends Component {
             
             <div class="form-group">
             <input type="text" name="email"  class="form-input" placeholder="Email" value={this.state.email} onChange={this.onChange}></input>
-            <div>{this.state.errors.email}</div><br></br>
+            <div class="red_color">{this.state.errors.email}</div><br></br>
             </div>
             <div class="form-group">
-            <input type="text" name="password"  class="form-input" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
-           <div>{this.state.errors.password}</div><br></br>
+            <input type="password" name="password"  class="form-input" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
+           <div class="red_color">{this.state.errors.password}</div><br></br>
                 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
             </div>
             

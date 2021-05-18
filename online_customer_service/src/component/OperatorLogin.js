@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as OperatorAction from '../store/actions/OperatorAction'
 import {Redirect} from 'react-router-dom';
 import OperatorHome from './OperatorHome';
-import Navbar from './Navbar';
+import HomeNavBar from './HomeNavBar';
 
 class OperatorLogin extends Component{
     constructor(props){
@@ -15,13 +15,31 @@ class OperatorLogin extends Component{
             errors:{}
         }
     }
+    addValidate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.email)
+       {
+         formIsValid = false
+         errors['email'] = '*Please enter this field'
+       }
+       if(!this.state.password)
+       {
+         formIsValid = false
+         errors['password'] = '*Please enter this field'
+       }
+       this.setState({ errors })
+       return formIsValid
+   }
     validation=(usr)=>{
+        usr.preventDefault();
+        if(this.addValidate()){
         let payload={
             email:this.state.email,
             password:this.state.password
         }
         this.props.OperatorAction.loginValidate(payload);
-        usr.preventDefault();
+    }
 
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
@@ -30,7 +48,7 @@ class OperatorLogin extends Component{
         console.log("inside render method"+login);
         if(login!==undefined){
          // alert(login.email)
-         debugger;
+        
          sessionStorage.setItem('operatorId',login.operatorId);
          sessionStorage.setItem('password',login.password);
          sessionStorage.setItem('opfirstName',login.firstName);
@@ -39,7 +57,7 @@ class OperatorLogin extends Component{
         }
         return(
             <div class="main">
-            <Navbar/>
+            <HomeNavBar/>
         <section class="signup">
         
         <div class="container">
@@ -49,11 +67,11 @@ class OperatorLogin extends Component{
                     
                     <div class="form-group">
                     <input type="text" name="email"  class="form-input" placeholder="Email" value={this.state.email} onChange={this.onChange}></input>
-                    <div>{this.state.errors.email}</div><br></br>
+                    <div class="red_color">{this.state.errors.email}</div><br></br>
                     </div>
                     <div class="form-group">
-                    <input type="text" name="password"  class="form-input" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
-                   <div>{this.state.errors.password}</div><br></br>
+                    <input type="password" name="password"  class="form-input" placeholder="Password" value={this.state.password} onChange={this.onChange}></input><br></br>
+                   <div class="red_color">{this.state.errors.password}</div><br></br>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
                     

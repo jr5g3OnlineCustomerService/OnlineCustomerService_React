@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
 
-export default class Navbar extends Component{
+export default class HomeNavBar extends Component{
 render(){
 
     return(
@@ -20,9 +20,7 @@ render(){
           <li class="nav-item">
             <a class="nav-link" href="#">About us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Logout</a>
-          </li>
+          
         </ul>
       </div>
     </nav>

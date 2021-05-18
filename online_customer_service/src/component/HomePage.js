@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import {Link} from 'react-router-dom';
-import Navbar from './Navbar';
+import HomeNavBar from './HomeNavBar';
 import bg from '../images/signup-bg.jpg'
 class HomePage extends Component{
     constructor(props){
@@ -12,7 +12,7 @@ class HomePage extends Component{
         //alert(data);
         return(
             <div class="App">
-				<Navbar/>
+				<HomeNavBar/>
 				
 		<h5><em>CUSTOMER SERVICE CENTER </em></h5>
 		<div class="row">

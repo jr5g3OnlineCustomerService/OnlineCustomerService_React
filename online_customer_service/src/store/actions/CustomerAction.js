@@ -22,7 +22,7 @@ return(dispatch)=>{
         dispatch(loginSuccess(Response.data));
     })
     .catch(Error=>{
-        console.log("error");
+        alert("Invalid credentials");
         throw(Error);
     });
 };

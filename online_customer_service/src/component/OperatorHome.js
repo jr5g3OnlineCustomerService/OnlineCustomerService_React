@@ -31,7 +31,7 @@ render(){
 			    <div class="card img" style={{width: "100%" ,height: "150px"}}>
 			       <i class="fa fa-search fa-lg" aria-hidden="true" ></i>
 			        <div class="card-body text-center">
-			            <h5 class="card-title">Add Customer Isues</h5>
+			            <h5 class="card-title">Add Customer Issues</h5>
 			            <p class="card-text"></p>
 			            <Link to="/addIssue"> <button className="btn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
 			        </div>
@@ -43,7 +43,7 @@ render(){
 			        <div class="card-body text-center">
 			            <h5 class="card-title">View All Issues</h5>
 			            <p class="card-text"></p>
-			            <Link to="/viewallissues"> <button className="bbtn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
+			            <Link to="/viewallissues"> <button className="btn btn-success"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></Link>
 			        </div>
 			    </div>
 			</div>

@@ -15,7 +15,7 @@ render()
 {
     let stock=this.props.dept;
     return(
-        <div className="App bg_color">
+        <div className="App">
         <h1>Department</h1>
         <table className="table table-hover" align="center" width="50%" border="1">
             
