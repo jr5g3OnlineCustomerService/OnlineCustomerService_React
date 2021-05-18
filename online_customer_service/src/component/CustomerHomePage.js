@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 class CustomerHomePage extends Component{
     constructor(props){
         super(props)
@@ -8,7 +9,8 @@ class CustomerHomePage extends Component{
     render(){
         
         return(
-            <div>
+            <div class="App">
+				<Navbar/>
 		<h5><u>WELCOME {sessionStorage.getItem('firstName')}</u></h5>
 		<div class="row">
 			<div class="col-sm-4">

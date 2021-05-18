@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
-
+import Navbar from './Navbar';
 class OperatorLogin extends Component{
     constructor(props){
         super(props)
@@ -13,7 +13,8 @@ render(){
     debugger
     //alert(data);
     return(
-        <div>
+        <div class="App">
+			<Navbar/>
 		<h5>WELCOME {sessionStorage.getItem('opfirstName')}</h5>
 		<div class="row">
 			<div class="col-sm-3">

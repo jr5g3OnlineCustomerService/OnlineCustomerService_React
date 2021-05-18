@@ -3,6 +3,7 @@ import {connect } from 'react-redux';
 import * as CustomerAction from '../store/actions/CustomerAction';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class CustomerChangePassword extends Component {
     constructor(props){
@@ -30,17 +31,18 @@ class CustomerChangePassword extends Component {
     }
     render() {
         return(
-            <div>
+            <div class="App">
+                <Navbar/>
 			    <h1>CUSTOMER CHANGE PASSWORD PAGE </h1>
 				 <form >
-				    <div className="form-group">
+				   
                     <label>Enter Customer Id</label>
-						<input type="text" name="customerId" className="form-control" value={this.state.customerId}readOnly></input><br></br>
+						<input type="text" name="customerId" className="form-control" value={this.state.customerId}readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
 					    <label>Enter password</label>
-						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required"></input><br></br>
+						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
 					
-                    </div>
-						<button className="btn btn-success" onClick={this.update}>update password</button>
+                  
+						<button className="btn btn-success" onClick={this.update}>Update</button>
                         <Link to="/Customerhome"> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>

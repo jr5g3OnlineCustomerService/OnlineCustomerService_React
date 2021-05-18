@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ChatAction from '../store/actions/ChatAction';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class AddChat extends Component{
     constructor(props){
@@ -68,32 +69,33 @@ class AddChat extends Component{
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         return(
-        <div>
+        <div class="App">
+            <Navbar/>
             <h1>Chat Page</h1>
             <form>
-                <div className="form-group">
-                <label>complaints</label>
-                    <input type="text" name="complaints" value={this.state.complaints} className="form-control" onChange={this.onChange}></input>
+               
+                <label>Complaints </label>
+                    <input type="text" name="complaints" value={this.state.complaints} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.complaints}</div><br></br>
 
-                    <label>firstName</label>
-                    <input type="text" name="firstName" value={this.state.firstName} className="form-control" onChange={this.onChange}></input>
+                    <label>FirstName </label>
+                    <input type="text" name="firstName" value={this.state.firstName} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
                     <div>{this.state.errors.firstName}</div><br></br>
                   
-                    <label>lastName</label>
-                    <input type="text" name="lastName" value={this.state.lastName} className="form-control" onChange={this.onChange}></input>
+                    <label>LastName </label>
+                    <input type="text" name="lastName" value={this.state.lastName} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
                     <div>{this.state.errors.lastName}</div><br></br>
                    
-                    <label>email</label>
-                    <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.onChange}></input>
+                    <label>Email </label>
+                    <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
                     <div>{this.state.errors.email}</div><br></br>
                     
-                    <label>customerId</label>
-                    <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange}></input>
+                    <label>CustomerId </label>
+                    <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
                     <div>{this.state.errors.customerId}</div><br></br>
                 
-                </div>
-                <button className="btn btn-sucess" onClick={this.add}>Click</button>
+                
+                <button className="btn btn-success" onClick={this.add}>Submit</button>
             </form>
             <Link to="/Customerhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Customer Home Page</button>
    </Link>

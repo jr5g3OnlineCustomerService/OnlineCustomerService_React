@@ -39,7 +39,7 @@ render()
                        
               </tbody>
         </table><br/>
-        <Link to="/viewallcustissue">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Customer Home Page</button>
+        <Link to="/viewallcustissue">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back</button>
    </Link>
     </div>
 );

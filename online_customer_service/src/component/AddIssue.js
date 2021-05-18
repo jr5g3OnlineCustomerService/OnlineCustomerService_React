@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
 import * as IssueAction from '../store/actions/IssueAction'
+import Navbar from './Navbar';
 
 class AddIssue extends Component{
     constructor(props){
@@ -68,38 +69,39 @@ class AddIssue extends Component{
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
         return(
-        <div>
+        <div class="App">
+            <Navbar/>
             <h1>Add Issue</h1>
             <form>
-                <div className="form-group">
-                    <label>issueType</label>
-                    <input type="text" name="issueType" value={this.state.issueType} className="form-control" onChange={this.onChange}></input>
+
+                    <label>IssueType </label>
+                    <input type="text" name="issueType" value={this.state.issueType} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.issueType}</div><br></br>
 		            
                     
-                    <label>description</label>
-                    <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.onChange}></input>
+                    <label>Description </label>
+                    <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.description}</div><br></br>
                    
                    
-                    <label>issueStatus</label>
-                    <input type="text" name="issueStatus" value={this.state.issueStatus} className="form-control" onChange={this.onChange}></input>
+                    <label>IssueStatus </label>
+                    <input type="text" name="issueStatus" value={this.state.issueStatus} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.issueStatus}</div><br></br>
                    
                    
-                     <label>customerId</label>
-                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange} readOnly></input>
+                     <label>CustomerId </label>
+                    <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange} readOnly style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.customerID}</div><br></br>
                     
                    
-                    <label>operatorId</label>
-                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange} readOnly></input>
+                    <label>OperatorId </label>
+                    <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange} readOnly style={{width:"200px",display:"inline-block"}}></input>
                     <div>{this.state.errors.operatorId}</div><br></br>
                     
 
-                </div>
-                <button className="btn btn-sucess" onClick={this.registration}>Click</button><br/>
-<Link to="/operatorhome">
+                
+                <button className="btn btn-success" onClick={this.registration}>Submit</button><br/>
+                <Link to="/operatorhome">
                 <button className="btn btn-success" style={{background:'#6C98FF'}}>Back to Operator Home Page</button>
                 </Link>
             </form>

@@ -4,6 +4,7 @@ import * as CustomerAction from '../store/actions/CustomerAction';
 import { bindActionCreators } from 'redux';
 import {Link} from 'react-router-dom';
 import * as IssueAction from '../store/actions/IssueAction'
+import Navbar from './Navbar';
 
 class ViewAllCustomerIssue extends Component{
    constructor(props){
@@ -18,7 +19,8 @@ render()
 {
     let stock=this.props.issue;
     return(
-        <div>
+        <div class="App">
+            <Navbar/>
         <h1>Issue</h1>
         <table className="table-bordered table-dark" align="center" width="50%" border="1">
             
@@ -48,6 +50,7 @@ render()
                        
               </tbody>
         </table><br/>
+        <Link to="/Customerhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Customer Home Page</button></Link>
     </div>
 );
 }

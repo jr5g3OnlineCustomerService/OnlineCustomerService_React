@@ -3,6 +3,7 @@ import {connect } from 'react-redux';
 import * as OperatorAction from '../store/actions/OperatorAction';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class OperatorChangePassword extends Component {
     constructor(props){
@@ -32,17 +33,18 @@ class OperatorChangePassword extends Component {
     render() {
         
         return(
-            <div>
+            <div class="App">
+                <Navbar/>
 			    <h1> OPERATOR CHANGE PASSWORD PAGE </h1>
 				 <form >
-				    <div className="form-group">
+				    
                     <label>Enter Operator Id</label>
-						<input type="text" name="operatorId" className="form-control" value={this.state.operatorId} onChange={this.onChange}  readOnly></input><br></br>
+						<input type="text" name="operatorId" className="form-control" value={this.state.operatorId} onChange={this.onChange}  readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
 					    <label>Enter password</label>
-						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required"></input><br></br>
+						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
 					
-                    </div>
-						<button className="btn btn-success" onClick={this.update}>update password</button>
+                   
+						<button className="btn btn-success" onClick={this.update}>Update</button>
                         <Link to="/operatorhome"> <button className="btn btn-default">Cancel</button></Link> 
 					</form> 
 				</div>
