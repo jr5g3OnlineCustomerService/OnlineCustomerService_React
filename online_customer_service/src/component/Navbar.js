@@ -18,9 +18,6 @@ render(){
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/">Logout</a>
           </li>
         </ul>

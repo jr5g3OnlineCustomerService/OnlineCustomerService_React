@@ -37,6 +37,7 @@ import AdminHomePage from './component/AdminHomePage';
 import HomePage from './component/HomePage';
 import Navbar from './component/Navbar';
 import ViewSolutionByIssueId from './component/ViewSolutionByIssueId';
+import AboutUs from './component/AboutUs';
 function App() {
   return (
     <div className="App">
@@ -78,6 +79,7 @@ function App() {
           <Route path="/AdminHome" exact component={AdminHomePage}></Route>
           <Route path="/nav" exact component={Navbar}></Route>
           <Route path="/viewsolns/:id" exact component={ViewSolutionByIssueId}></Route>
+          <Route path="/aboutus" exact component={AboutUs}></Route> 
           <Router></Router>
         </Switch>
       </Router>
