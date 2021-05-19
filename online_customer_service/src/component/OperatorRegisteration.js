@@ -38,6 +38,11 @@ class OperatorRegisteration extends Component{
              formIsValid = false
              errors['email']='*Please enter this field'
         }
+        else if(!/\S+@\S+\.\S+/.test(this.state.email))
+      {
+        formIsValid = false
+        errors['email']='*Please enter valid email'
+      }
         if(!this.state.mobile)
         {    
              formIsValid = false
