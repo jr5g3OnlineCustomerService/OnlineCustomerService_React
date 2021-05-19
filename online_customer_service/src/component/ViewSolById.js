@@ -25,9 +25,11 @@ render()
             
             <thead>
                 <tr>
-                    <th>SOLUTION CODE</th>
+                <th>ISSUE ID</th>
+                    
 		    <th>SOLUTION DESCRIPTION</th>
 		    <th>SOLUTION DATE</th>
+            <th>SOLUTION CODE</th>
                        
                 </tr>
             </thead>
@@ -35,9 +37,11 @@ render()
                 {
                       stock.map(sol=>
                      <tr key={sol.solutionId}align="center">
-                         <td>{sol.solutionId}</td>
+                         <td>{sol.issue.issueId}</td>
+                         
                          <td>{sol.solutionDescription}</td>
                          <td>{sol.solutionDate}</td>
+                         <td>{sol.solutionId}</td>
                         
                      </tr>
                     
