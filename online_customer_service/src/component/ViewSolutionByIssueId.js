@@ -27,7 +27,7 @@ render()
                     <th>SOLUTION CODE</th>
 		    <th>SOLUTION DESCRIPTION</th>
 		    <th>SOLUTION DATE</th>
-            <th>ISSUE ID</th>
+            <th>ISSUE ID</th>            
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +37,7 @@ render()
                          <td>{sol.solutionId}</td>
                          <td>{sol.solutionDescription}</td>
                          <td>{sol.solutionDate}</td>
-                         <td>{sol.issue.issueId}</td>
+                        
                      </tr>
                     
                     }
@@ -52,7 +52,8 @@ render()
 }
 function mapStateToProps(state){
     return{
-        sol:state.CustomerReducer.sol
+        sol:state.CustomerReducer.sol,
+        issue:state.IssueReducer.issue
     };
 }
 function mapDispatchToProps(dispatch){
