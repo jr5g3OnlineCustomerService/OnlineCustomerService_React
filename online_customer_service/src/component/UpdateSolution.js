@@ -8,11 +8,11 @@ class UpdateSolution extends Component {
     constructor(props){
         super(props)
         this.state = {
-            solutionId: props.location.state.sol.solutionId,
-            solutionDescription: props.location.state.sol.solutionDescription,
-            solutionDate: props.location.state.sol.solutionDate,
-            customerId: props.location.state.sol.customerId,
-            operatorId:props.location.state.sol.operatorId,
+            solutionId: props.location.state.issue.solutionId,
+            solutionDescription: props.location.state.issue.solutionDescription,
+            solutionDate: props.location.state.issue.solutionDate,
+            customerId: props.location.state.issue.customer.customerId,
+            operatorId:props.location.state.issue.operator.operatorId,
             errors:{}
         }
     }
@@ -59,7 +59,7 @@ class UpdateSolution extends Component {
             customerId: this.state.customerId,
             operatorId:this.state.operatorId,
         }
-        this.props.DepartmentAction.modifySol(payload);
+        this.props.OperatorAction.modifySol(payload);
     }
         
        
@@ -76,7 +76,7 @@ class UpdateSolution extends Component {
         
         return(
             <div class="container">
-			    <h1>Update Department</h1>
+			    <h1>Update Solution</h1>
 				 <form >
 				    
                     <h5>Solution Id</h5>
@@ -84,11 +84,14 @@ class UpdateSolution extends Component {
 					    <h5>Enter Solution Description </h5>
 						<input type="text" name="solutionDescription" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
 						<div>{this.state.errors.solutionDescription}</div><br></br>
+                        <h5>Solution Date </h5>
                         <input type="text" name="solutionDate" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
 						<div>{this.state.errors.solutionDate}</div><br></br>
-                        <input type="text" name="customerId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
+                        <h5>CustomerID</h5>
+                        <input type="text" name="customerId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}readOnly></input><br></br>
 						<div>{this.state.errors.customerId}</div><br></br>
-                        <input type="text" name="operatorId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
+                        <h5>Operator ID </h5>
+                        <input type="text" name="operatorId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}readOnly></input><br></br>
 						<div>{this.state.errors.operatorId}</div><br></br>
                         <button className="btn btn-success" onClick={this.updateSol}>Update</button>
                         <Link to="/operatorhome"> <button className="btn btn-warning">Back</button></Link>

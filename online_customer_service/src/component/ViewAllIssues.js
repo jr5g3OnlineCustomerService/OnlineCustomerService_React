@@ -43,10 +43,10 @@ render()
 			             <td>{issue.description}</td>
 			             <td>{issue.issueStatus}</td>
                          <td>{issue.customer.customerId}</td>
-                         <td><Link to={{pathname:'/addSoln',state:{issue}}}><button className="btn btn-danger">Add Solution</button></Link></td>
+                         <td><Link to={{pathname:'/addSoln',state:{issue}}}><button className="btn btn-danger">Add</button></Link></td>
                          <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
-                         <td><Link to={`/ViewSolById/${issue.issueId}`}><button className="btn btn-danger">View Solution</button></Link></td>
-                       
+                         <td><Link to={`/ViewSolById/${issue.operator.operatorId}`}><button className="btn btn-danger">View</button></Link></td>
+                         <td><Link to={{pathname:'/modifysoln',state:{issue}}}><button className="btn btn-danger">Update</button></Link></td>
                      </tr>
                     
                       )}

@@ -232,7 +232,7 @@ export const getSolByCodeSuccess = (sol) => {
 export const findSolById = (code) => {
     console.log("inside getSolutionByCode method");
     return (dispatch)=> {
-        return axios.get("http://localhost:8889/customer/viewSolutionsById"+code)
+        return axios.get("http://localhost:8889/customer/viewSolutionsById/"+code)
         .then(Response => {
             localStorage.setItem("sol",JSON.stringify(Response.data));
             console.log("api call");
