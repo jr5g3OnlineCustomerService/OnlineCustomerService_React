@@ -74,19 +74,19 @@ class AddSolution extends Component{
            
                 <label> SolutionDescription</label>
                 <input type="text" name="solutionDescription" value={this.state.solutionDescription} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
-                <div>{this.state.errors.solutionDescription}</div><br></br>
+                <div class="red_color">{this.state.errors.solutionDescription}</div><br></br>
 
                  <label>IssueId</label>
                     <input type="text" name="issueId" value={this.state.issueId} className="form-control" onChange={this.onChange}readOnly style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.issueId}</div><br></br>
+                    <div class="red_color">{this.state.errors.issueId}</div><br></br>
 
                 <label>OperatorId</label>
                     <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange}readOnly style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.operatorId}</div><br></br>
+                    <div class="red_color">{this.state.errors.operatorId}</div><br></br>
 
                     <label>CustomerId</label>
                     <input type="text" name="customerId" value={this.state.customerId} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}} readOnly></input>
-                    <div>{this.state.errors.customerId}</div><br></br>
+                    <div class="red_color">{this.state.errors.customerId}</div><br></br>
 
 
            

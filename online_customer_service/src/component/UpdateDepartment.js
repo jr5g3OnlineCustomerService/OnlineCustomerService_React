@@ -58,7 +58,7 @@ class UpdateDepartment extends Component {
 						<input type="text" name="departmentID" className="form-control" value={this.state.departmentID} onChange={this.onChange}  readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
 					    <h5>Enter Department name</h5>
 						<input type="text" name="departmentName" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
-						<div>{this.state.errors.departmentName}</div><br></br>
+						<div class="red_color">{this.state.errors.departmentName}</div><br></br>
                         <button className="btn btn-success" onClick={this.updateDept}>Update</button>
                         <Link to="/AdminHome"> <button className="btn btn-warning">Back</button></Link>
 					</form>

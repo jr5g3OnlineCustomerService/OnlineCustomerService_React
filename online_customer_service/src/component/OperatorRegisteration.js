@@ -83,6 +83,7 @@ class OperatorRegisteration extends Component{
     }
     onChange=(obj)=>this.setState({[obj.target.name]:obj.target.value});
     render(){
+
         return(
             <div class="main">
             <Navbar/>
@@ -95,33 +96,33 @@ class OperatorRegisteration extends Component{
                     
                     <div class="form-group">
                     <input type="text" name="firstName" value={this.state.firstName} className="form-control" onChange={this.onChange} placeholder="First Name"></input>
-                    <div>{this.state.errors.firstName}</div><br></br>
+                    <div class="red_color">{this.state.errors.firstName}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="lastName" value={this.state.lastName} className="form-control" onChange={this.onChange} placeholder="Last Name"></input>
-                    <div>{this.state.errors.lastName}</div><br></br>
+                    <div class="red_color">{this.state.errors.lastName}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="email" value={this.state.email} className="form-control" onChange={this.onChange} placeholder="Email"></input>
-                    <div>{this.state.errors.email}</div><br></br>
+                    <div class="red_color">{this.state.errors.email}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="mobile" value={this.state.mobile} className="form-control" onChange={this.onChange} placeholder="Mobile"></input>
-                    <div>{this.state.errors.mobile}</div><br></br>
+                    <div class="red_color">{this.state.errors.mobile}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="city" value={this.state.city} className="form-control" onChange={this.onChange} placeholder="City"></input>
-                    <div>{this.state.errors.city}</div><br></br>
+                    <div class="red_color">{this.state.errors.city}</div><br></br>
                     </div>
                     <div class="form-group">
                     <input type="text" name="password" value={this.state.password} className="form-control" onChange={this.onChange} placeholder="Password"></input>
-                    <div>{this.state.errors.password}</div><br></br>
+                    <div class="red_color">{this.state.errors.password}</div><br></br>
                     </div>
                     
                     
                     <div class="form-group">
                     <input type="text" name="departmentID" value={this.state.departmentID} className="form-control" onChange={this.onChange}></input>
-                    <div>{this.state.errors.departmentID}</div><br></br>
+                    <div class="red_color">{this.state.errors.departmentID}</div><br></br>
                     </div>
                     
                     <div class="form-group">

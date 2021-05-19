@@ -76,27 +76,27 @@ class AddIssue extends Component{
 
                     <label>IssueType </label>
                     <input type="text" name="issueType" value={this.state.issueType} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.issueType}</div><br></br>
+                    <div class="red_color">{this.state.errors.issueType}</div><br></br>
 		            
                     
                     <label>Description </label>
                     <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.description}</div><br></br>
+                    <div class="red_color">{this.state.errors.description}</div><br></br>
                    
                    
                     <label>IssueStatus </label>
                     <input type="text" name="issueStatus" value={this.state.issueStatus} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.issueStatus}</div><br></br>
+                    <div class="red_color">{this.state.errors.issueStatus}</div><br></br>
                    
                    
                      <label>CustomerId </label>
                     <input type="text" name="customerID" value={this.state.customerID} className="form-control" onChange={this.onChange}  style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.customerID}</div><br></br>
+                    <div class="red_color">{this.state.errors.customerID}</div><br></br>
                     
                    
                     <label>OperatorId </label>
                     <input type="text" name="operatorId" value={this.state.operatorId} className="form-control" onChange={this.onChange} readOnly style={{width:"200px",display:"inline-block"}}></input>
-                    <div>{this.state.errors.operatorId}</div><br></br>
+                    <div class="red_color">{this.state.errors.operatorId}</div><br></br>
                     
 
                 

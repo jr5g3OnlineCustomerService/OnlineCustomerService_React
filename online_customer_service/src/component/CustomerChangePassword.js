@@ -11,14 +11,28 @@ class CustomerChangePassword extends Component {
         this.state = {
             customerId :sessionStorage.getItem('customerId'),
             password : '',
+            errors :{}
         }
         this.update = this.update.bind(this);
     }
     componentDidMount(){
         console.log(this.props.location.state);
     }
+    validate = () => {
+        let errors = {}
+        let formIsValid = true
+       
+        if(!this.state.password)
+        {
+            formIsValid = false
+            errors['password'] = '*Please enter this field '
+        }
+        this.setState({ errors })
+        return formIsValid
+   }
     update= (e) =>{
         e.preventDefault();
+        if(this.validate()){ 
         let payload = {
             customerId :this.state.customerId,
             password : this.state.password,
@@ -26,6 +40,7 @@ class CustomerChangePassword extends Component {
         this.props.CustomerAction.customerchangepassword(payload);
         window.location.href='/Customerhome';
     }
+}
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
@@ -40,7 +55,7 @@ class CustomerChangePassword extends Component {
 						<input type="text" name="customerId" className="form-control" value={this.state.customerId}readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
 					    <label>Enter password</label>
 						<input type="text" name="password" className="form-control" value={this.state.password} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
-					
+					    <div class="red_color">{this.state.errors.password}</div><br></br>
                   
 						<button className="btn btn-success" onClick={this.update}>Update</button>
                         <Link to="/Customerhome"> <button className="btn btn-default">Cancel</button></Link> 

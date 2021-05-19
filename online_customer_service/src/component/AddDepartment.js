@@ -47,7 +47,7 @@ render(){
         <form>
                 <h4>Departmentname</h4>
                 <input type="text" name="departmentName" value={this.state.departmentName} className="form-control" onChange={this.onChange} style={{width:"200px",display:"inline-block"}}></input>
-                <div>{this.state.errors.departmentName}</div><br></br>
+                <div class="red_color">{this.state.errors.departmentName}</div><br></br>
             <button className="btn btn-success" onClick={this.addDept}>AddItems</button>
             <Link to="/AdminHome"> <button className="btn btn-warning">Back</button></Link>
         </form>
