@@ -8,11 +8,8 @@ class UpdateSolution extends Component {
     constructor(props){
         super(props)
         this.state = {
-            solutionId: props.location.state.issue.solutionId,
-            solutionDescription: props.location.state.issue.solutionDescription,
-            solutionDate: props.location.state.issue.solutionDate,
-            customerId: props.location.state.issue.customer.customerId,
-            operatorId:props.location.state.issue.operator.operatorId,
+            solutionId: props.location.state.sol.solutionId,
+            solutionDescription: props.location.state.sol.solutionDescription,
             errors:{}
         }
     }
@@ -26,52 +23,30 @@ class UpdateSolution extends Component {
             errors['solutionDescription'] = '*Please enter this field '
         }
         this.setState({ errors })
-        if(!this.state.solutionDate)
-        {
-            formIsValid = false
-            errors['solutionDate'] = '*Please enter this field '
-        }
-        this.setState({ errors })
-        if(!this.state.customerId)
-        {
-            formIsValid = false
-            errors['customerId'] = '*Please enter this field '
-        }
-        this.setState({ errors })
-        if(!this.state.operatorId)
-        {
-            formIsValid = false
-            errors['operatorId'] = '*Please enter this field '
-        }
-        this.setState({ errors })
-        return formIsValid
+       
    }
     componentDidMount(){
         console.log(this.props.location.state);
     }
     updateSol= (e) =>{
         e.preventDefault();
-        if(this.validate()){
+        //if(this.validate()){
         let payload = {
             solutionId: this.state.solutionId,
             solutionDescription:this.state.solutionDescription,
-            solutionDate: this.state.solutionDate,
-            customerId: this.state.customerId,
-            operatorId:this.state.operatorId,
         }
         this.props.OperatorAction.modifySol(payload);
     }
-        
-       
-    }
+    
     onChange = (obj) => {
         this.setState({[obj.target.name] : obj.target.value});
     }
     render() {
        let update=this.props.editsol;
+       let id=sessionStorage.getItem('operatorId')
        if(update!==undefined){
            alert("Solution Updated");
-            window.location.href="/allsol";
+            window.location.href="/ViewSolById/"+id;
        }
         
         return(
@@ -80,19 +55,11 @@ class UpdateSolution extends Component {
 				 <form >
 				    
                     <h5>Solution Id</h5>
-						<input type="text" name="SolutionId" className="form-control" value={this.state.departmentID} onChange={this.onChange}  readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
+						<input type="text" name="SolutionId" className="form-control" value={this.state.solutionId} onChange={this.onChange}  readOnly style={{width:"200px",display:"inline-block"}}></input><br></br>
 					    <h5>Enter Solution Description </h5>
-						<input type="text" name="solutionDescription" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
+						<input type="text" name="solutionDescription" className="form-control" value={this.state.solutionDescription} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
 						<div>{this.state.errors.solutionDescription}</div><br></br>
-                        <h5>Solution Date </h5>
-                        <input type="text" name="solutionDate" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}></input><br></br>
-						<div>{this.state.errors.solutionDate}</div><br></br>
-                        <h5>CustomerID</h5>
-                        <input type="text" name="customerId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}readOnly></input><br></br>
-						<div>{this.state.errors.customerId}</div><br></br>
-                        <h5>Operator ID </h5>
-                        <input type="text" name="operatorId" className="form-control" value={this.state.departmentName} onChange={this.onChange}  required="required" style={{width:"200px",display:"inline-block"}}readOnly></input><br></br>
-						<div>{this.state.errors.operatorId}</div><br></br>
+                       
                         <button className="btn btn-success" onClick={this.updateSol}>Update</button>
                         <Link to="/operatorhome"> <button className="btn btn-warning">Back</button></Link>
 					</form>

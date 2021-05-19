@@ -77,6 +77,11 @@ export const getSolutionByIssueId=(code)=>{
             console.log("api call");
             dispatch(getSolutionSuccess(Response.data));
         })
+        .catch(Error=>{
+            alert("solution for this issue is not found");
+            window.location.href="/viewallcustissue";
+            throw(Error);
+        });
     };
 };
 export const editSuccess=()=>{

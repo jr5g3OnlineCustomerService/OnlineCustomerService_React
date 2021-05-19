@@ -284,9 +284,7 @@ export const modifySol = (payload) =>{
     let data = {
         solutionId: payload.solutionId,
         solutionDescription:payload.solutionDescription,
-        solutionDate: payload.solutionDate,
-        customerId: payload.customerId,
-        operatorId:payload.operatorId,
+        
     }
     return (dispatch)=> {
         return axios.put(OperatorURL+"/updateSol",data)

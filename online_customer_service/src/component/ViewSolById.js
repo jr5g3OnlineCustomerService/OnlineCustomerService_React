@@ -42,7 +42,7 @@ render()
                          <td>{sol.solutionDescription}</td>
                          <td>{sol.solutionDate}</td>
                          <td>{sol.solutionId}</td>
-                        
+                         <td><Link to={{pathname:'/modifysoln',state:{sol}}}><button className="btn btn-danger">Update</button></Link></td>
                      </tr>
                     
                       )}

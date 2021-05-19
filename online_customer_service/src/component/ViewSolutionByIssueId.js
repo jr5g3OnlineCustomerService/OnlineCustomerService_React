@@ -13,6 +13,7 @@ componentDidMount(){
        CustomerAction.getSolutionByIssueId(match.params.id);
     //this.props.CustomerAction.getSolutionByIssueId(sessionStorage.getItem('customerId'))
 }
+
 render()
 {
     let sol=this.props.sol;
@@ -26,8 +27,7 @@ render()
                 <tr>
                     <th>SOLUTION CODE</th>
 		    <th>SOLUTION DESCRIPTION</th>
-		    <th>SOLUTION DATE</th>
-            <th>ISSUE ID</th>            
+		    <th>SOLUTION DATE</th>            
                 </tr>
             </thead>
             <tbody>
@@ -44,8 +44,8 @@ render()
                        
               </tbody>
         </table><br/>
-        <Link to="/viewallcustissue">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back</button>
-   </Link>
+      
+      <a class="btn btn-primary" href="/viewallcustissue">Back</a>
     </div>
 );
 }

@@ -18,6 +18,7 @@ componentDidMount(){
 }
 render()
 {
+    let view=sessionStorage.getItem('operatorId')
     let stock=this.props.issue;
     return(
         <div>
@@ -45,14 +46,15 @@ render()
                          <td>{issue.customer.customerId}</td>
                          <td><Link to={{pathname:'/addSoln',state:{issue}}}><button className="btn btn-danger">Add</button></Link></td>
                          <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
-                         <td><Link to={`/ViewSolById/${issue.operator.operatorId}`}><button className="btn btn-danger">View</button></Link></td>
-                         <td><Link to={{pathname:'/modifysoln',state:{issue}}}><button className="btn btn-danger">Update</button></Link></td>
+                     
+                         
                      </tr>
                     
                       )}
                        
               </tbody>
         </table><br/>
+        <Link to={`/ViewSolById/${view}`}><button className="btn btn-danger">View</button></Link>
         <Link to="/operatorhome">   <button className="btn btn-success" style={{background:'#6C63FF'}}>Back To Operator Home Page</button>
    </Link>
     </div>
