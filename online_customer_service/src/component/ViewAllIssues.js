@@ -36,7 +36,7 @@ render()
             </thead>
             <tbody>
                 {
-                    stock.map(issue=>
+                    stock.map(issue=>  
                      <tr key={issue.issueId}align="center">
                          <td>{issue.issueId}</td>
                          <td>{issue.issueType}</td>
@@ -45,6 +45,7 @@ render()
                          <td>{issue.customer.customerId}</td>
                          <td><Link to={{pathname:'/addSoln',state:{issue}}}><button className="btn btn-danger">Add Solution</button></Link></td>
                          <td><Link to={`/close/${issue.issueId}`}><button className="btn btn-danger">Close</button></Link></td>
+                         <td><Link to={`/ViewSolById/${issue.issueId}`}><button className="btn btn-danger">View Solution</button></Link></td>
                        
                      </tr>
                     

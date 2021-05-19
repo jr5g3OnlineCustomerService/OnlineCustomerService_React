@@ -221,6 +221,30 @@ export const viewCustByEmail = (email) => {
         });
     };
 };
+
+export const getSolByCodeSuccess = (sol) => {
+    console.log("inside getSolByCodeSuccess method");
+    return {
+        type : 'GET_SOLUTION_SUCCESS',sol
+    }
+};
+
+export const findSolById = (payload) => {
+    console.log("inside getSolutionByCode method");
+    return (dispatch)=> {
+        return axios.get("http://localhost:8889/customer/Solutionsbyissueids",payload)
+        .then(Response => {
+            localStorage.setItem("sol",JSON.stringify(Response.data));
+            console.log("api call");
+            dispatch(getSolByCodeSuccess(Response.data));
+        })
+        .catch(Error =>{
+            console.log("error");
+            throw(Error);
+        });
+    };
+};
+
 export const editSuccess=()=>{
     console.log("inside edit Success method");
     alert("password updated");

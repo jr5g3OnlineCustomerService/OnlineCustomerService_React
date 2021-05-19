@@ -9,6 +9,7 @@ const initialState={
     editpass:undefined,
     login:undefined,
     adsol:undefined,
+    sol:[]
 }
 
 export default function OperatorReducer(state=initialState,action){
@@ -60,6 +61,11 @@ export default function OperatorReducer(state=initialState,action){
                 login : action.login
             
             };
+            case 'GET_SOLUTION_SUCCESS':
+                        return{
+                            ...state,
+                            sol:action.sol
+                        };  
         default:
             return state
 }

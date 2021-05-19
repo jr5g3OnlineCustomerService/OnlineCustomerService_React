@@ -1,7 +1,6 @@
 const initialState={
     custlogin:undefined,
     customerReg: undefined,
-    cust:[],
     sol:[],
     editpass:undefined,
     issue:[],
@@ -20,11 +19,7 @@ export default function CustomerReducer(state=initialState,action){
                     ...state,
                     customerReg : action.customerReg
                 };
-                case 'GET_SOL_BY_CODE_SUCCESS':
-                    return{
-                        ...state,
-                        cust:action.cust
-                    }
+                
                     case 'GET_SOLUTIONALL_SUCCESS':
                         return{
                             ...state,
