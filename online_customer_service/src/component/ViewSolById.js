@@ -16,7 +16,7 @@ componentDidMount(){
 }
 render()
 {
-    let sol=this.props.sol;
+    let stock=this.props.sol;
     //alert(sol);
     return(
         <div>
@@ -33,7 +33,7 @@ render()
             </thead>
             <tbody>
                 {
-                
+                      stock.map(sol=>
                      <tr key={sol.solutionId}align="center">
                          <td>{sol.solutionId}</td>
                          <td>{sol.solutionDescription}</td>
@@ -41,7 +41,7 @@ render()
                         
                      </tr>
                     
-                    }
+                      )}
                        
               </tbody>
         </table><br/>
