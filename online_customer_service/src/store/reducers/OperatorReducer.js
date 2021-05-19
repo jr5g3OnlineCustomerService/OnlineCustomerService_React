@@ -9,6 +9,7 @@ const initialState={
     editpass:undefined,
     login:undefined,
     adsol:undefined,
+    aditsol:undefined,
     sol:[]
 }
 
@@ -65,7 +66,12 @@ export default function OperatorReducer(state=initialState,action){
                         return{
                             ...state,
                             sol:action.sol
-                        };  
+                        }; 
+                        case 'SOL_EDITED' :
+                            return {
+                                ...state,
+                                editsol : 'updated'
+                            } 
         default:
             return state
 }

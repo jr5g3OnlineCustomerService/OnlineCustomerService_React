@@ -271,3 +271,32 @@ export const changepassword = (payload) =>{
         });
     };
 };
+
+export const editSolSuccess=()=>{
+    console.log("inside EditOptSuccess method");
+    return {
+        type : 'SOL_EDITED'
+    }
+};
+
+export const modifySol = (payload) =>{
+    console.log("inside modify solution method");
+    let data = {
+        solutionId: payload.solutionId,
+        solutionDescription:payload.solutionDescription,
+        solutionDate: payload.solutionDate,
+        customerId: payload.customerId,
+        operatorId:payload.operatorId,
+    }
+    return (dispatch)=> {
+        return axios.put(OperatorURL+"/updateSol",data)
+        .then(Response => {
+            console.log("api call");
+            dispatch(editSolSuccess());
+        })
+        .catch(Error=> {
+            console.log("Error");
+            throw(Error);
+        });
+    };
+};

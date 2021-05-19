@@ -38,6 +38,7 @@ import HomePage from './component/HomePage';
 import Navbar from './component/Navbar';
 import ViewSolutionByIssueId from './component/ViewSolutionByIssueId';
 import AboutUs from './component/AboutUs';
+import UpdateSolution from './component/UpdateSolution';
 function App() {
   return (
     <div className="App">
@@ -80,6 +81,7 @@ function App() {
           <Route path="/nav" exact component={Navbar}></Route>
           <Route path="/viewsolns/:id" exact component={ViewSolutionByIssueId}></Route>
           <Route path="/aboutus" exact component={AboutUs}></Route> 
+          <Route path="/allsol" exact component={UpdateSolution}></Route>
           <Router></Router>
         </Switch>
       </Router>
