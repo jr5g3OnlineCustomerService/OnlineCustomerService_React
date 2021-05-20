@@ -7,23 +7,36 @@ class Adminlogin extends Component{
         this.state={
             username:'',
             password:'',
+            errors:{},
         }
         this.saveUser=this.saveUser.bind(this);
         this.onChange=this.onChange.bind(this);
     }
-    saveUser=(u)=>{
-    if(this.state.username===""){
-        //alert("Please enter username");
-        document.getElementById("text1").innerHTML="Enter Username".fontcolor("red");
-    }
-    else if(this.state.password===""){
-       // alert("Please enter password");
-       document.getElementById("text2").innerHTML="Enter Password".fontcolor("red");
-    }
+    addValidate = () => {
+        let errors = {}
+        let formIsValid = true
+        if(!this.state.username)
+       {
+         formIsValid = false
+         errors['username'] = '*Please enter this field'
+       }
+       if(!this.state.password)
+       {
+         formIsValid = false
+         errors['password'] = '*Please enter this field'
+       }
+       this.setState({ errors })
+       return formIsValid
+   }
+    saveUser=(usr)=>{
+        usr.preventDefault();
+        if(this.addValidate()){
     if(this.state.username==="admin" && this.state.password==="admin"){
         window.location.href="/AdminHome";
     }
+    
     }
+}
     onChange=(user)=>this.setState({[user.target.name]:user.target.value});
     render(){
         return(
@@ -38,9 +51,10 @@ class Adminlogin extends Component{
                         
                         <div class="form-group">
                         <input type="text" class="form-input" name="username"value={this.state.username}onChange={this.onChange} placeholder="Email" required></input>
-                        </div>
+                        <div class="red_color">{this.state.errors.username}</div><br/></div>
                         <div class="form-group">
                         <input type="password" class="form-input" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" required></input>
+                        <div class="red_color">{this.state.errors.password}</div><br/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         
